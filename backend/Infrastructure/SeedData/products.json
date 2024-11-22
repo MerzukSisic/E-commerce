@@ -1,0 +1,92 @@
+﻿[
+  {
+    "Name": "Adidas Ultraboost Shoes",
+    "Description": "High-performance running shoes designed for long-distance comfort and superior energy return.",
+    "Price": 129.99,
+    "PictureUrl": "https://example.com/images/adidas-ultraboost.jpg",
+    "Type": "Footwear",
+    "Brand": "Adidas",
+    "QuantityInStock": 25
+  },
+  {
+    "Name": "Nike Air Max 270",
+    "Description": "Iconic sneakers with a large air unit for enhanced comfort and style.",
+    "Price": 149.99,
+    "PictureUrl": "https://example.com/images/nike-airmax270.jpg",
+    "Type": "Footwear",
+    "Brand": "Nike",
+    "QuantityInStock": 30
+  },
+  {
+    "Name": "Wilson Pro Staff Tennis Racket",
+    "Description": "A professional-grade tennis racket designed for precision and control.",
+    "Price": 199.99,
+    "PictureUrl": "https://example.com/images/wilson-prostaff.jpg",
+    "Type": "Equipment",
+    "Brand": "Wilson",
+    "QuantityInStock": 15
+  },
+  {
+    "Name": "Under Armour HeatGear T-Shirt",
+    "Description": "Lightweight and breathable T-shirt perfect for intense workouts.",
+    "Price": 34.99,
+    "PictureUrl": "https://example.com/images/ua-heatgear.jpg",
+    "Type": "Apparel",
+    "Brand": "Under Armour",
+    "QuantityInStock": 60
+  },
+  {
+    "Name": "Puma Future Soccer Ball",
+    "Description": "Top-quality soccer ball for match play with improved durability.",
+    "Price": 39.99,
+    "PictureUrl": "https://example.com/images/puma-future-ball.jpg",
+    "Type": "Balls",
+    "Brand": "Puma",
+    "QuantityInStock": 50
+  },
+  {
+    "Name": "Everlast Powerlock Boxing Gloves",
+    "Description": "Durable boxing gloves designed for protection and optimal power.",
+    "Price": 79.99,
+    "PictureUrl": "https://example.com/images/everlast-powerlock.jpg",
+    "Type": "Gloves",
+    "Brand": "Everlast",
+    "QuantityInStock": 20
+  },
+  {
+    "Name": "Yonex Mavis 2000 Shuttlecock",
+    "Description": "Premium synthetic shuttlecock with great flight stability.",
+    "Price": 19.99,
+    "PictureUrl": "https://example.com/images/yonex-mavis2000.jpg",
+    "Type": "Equipment",
+    "Brand": "Yonex",
+    "QuantityInStock": 100
+  },
+  {
+    "Name": "Reebok Yoga Mat",
+    "Description": "High-quality, non-slip yoga mat for comfortable floor exercises.",
+    "Price": 49.99,
+    "PictureUrl": "https://example.com/images/reebok-yoga-mat.jpg",
+    "Type": "Mats",
+    "Brand": "Reebok",
+    "QuantityInStock": 45
+  },
+  {
+    "Name": "Speedo V-Class Swimming Goggles",
+    "Description": "UV-protected goggles with anti-fog technology for a clear view underwater.",
+    "Price": 29.99,
+    "PictureUrl": "https://example.com/images/speedo-vclass.jpg",
+    "Type": "Accessories",
+    "Brand": "Speedo",
+    "QuantityInStock": 80
+  },
+  {
+    "Name": "Decathlon Adjustable Dumbbells",
+    "Description": "Adjustable dumbbells for versatile strength training exercises.",
+    "Price": 89.99,
+    "PictureUrl": "https://example.com/images/decathlon-dumbbells.jpg",
+    "Type": "Weights",
+    "Brand": "Decathlon",
+    "QuantityInStock": 35
+  }
+]

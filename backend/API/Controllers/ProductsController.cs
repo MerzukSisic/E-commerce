@@ -1,6 +1,7 @@
 ﻿using Core.Entities;
 using Core.Entities.Interfaces;
 using Core.Interfaces;
+using Core.Specifications;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
@@ -12,7 +13,11 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Product>>> GetProducts(string? brand, string? type,string? sort)
     {
-        return  Ok(await repo.ListAllAsync());
+        var spec=new ProductSpecification(brand, type,sort);
+        var products=await repo.ListAysnc(spec);
+
+
+        return  Ok(products);
     }
 
     [HttpGet("{id:int}")]

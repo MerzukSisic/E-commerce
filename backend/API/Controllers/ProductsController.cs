@@ -74,16 +74,14 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
     public async Task<ActionResult<IReadOnlyList<Product>>> GetBrands()
     {
 
-        //to do
-        return Ok();
-       // return  Ok(await repo.GetBrandsAsync());
+       var spec=new BrandListSpec();
+       return Ok(await repo.ListAysnc(spec));
     }
     [HttpGet("types")]
     public async Task<ActionResult<IReadOnlyList<Product>>> GetTypes()
     {
-        //to do
-        return Ok();
-        //return  Ok(await repo.GetTypesAsync());
+        var spec=new TypeListSpec();
+       return Ok(await repo.ListAysnc(spec));
     }
 
     

@@ -1,5 +1,5 @@
-﻿using Core.Entities;
-using Core.Entities.Interfaces;
+﻿using API.RequestHelpers;
+using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
 using Microsoft.AspNetCore.Mvc;
@@ -12,12 +12,16 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
 {
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Product>>> GetProducts(
-        [FromBody]ProductSpecParams specParams)
+        [FromQuery]ProductSpecParams specParams)
     {
         var spec=new ProductSpecification(specParams);
         var products=await repo.ListAysnc(spec);
+        var count = await repo.CountAsync(spec);
         
-        return  Ok(products);
+        var pagination = new Pagination<Product>(specParams.PageIndex,
+            specParams.PageSize,count,products);
+        
+        return  Ok(pagination);
     }
 
     [HttpGet("{id:int}")]
@@ -83,9 +87,6 @@ public class ProductsController(IGenericRepository<Product> repo) : ControllerBa
         var spec=new TypeListSpec();
        return Ok(await repo.ListAysnc(spec));
     }
-
-    
-    
     private bool ProductExists(int id)
     {
         return repo.Exists(id);

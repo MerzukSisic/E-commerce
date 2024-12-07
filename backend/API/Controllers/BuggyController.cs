@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using API.DTOs;
 using Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Abstractions;
@@ -28,7 +29,7 @@ public class BuggyController : BaseApiController
         throw new Exception("This is a test exception");
     }
     [HttpPost("validationerror")]
-    public IActionResult GetValidationError(Product product)
+    public IActionResult GetValidationError(CreateProductDto product)
     {
         return Ok(product);
     }

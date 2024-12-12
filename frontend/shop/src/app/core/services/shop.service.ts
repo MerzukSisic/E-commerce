@@ -1,7 +1,8 @@
 import {inject, Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {Pagination} from '../../shared/models/pagination';
 import {Product} from '../../shared/models/product';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,22 @@ export class ShopService {
   types: string[] = [];
   brands:string[] = [];
 
-  getProducts()
+  getProducts(brands?:string[], types?:string[])
   {
-   return  this.http.get<Pagination<Product>>(this.baseUrl+ 'products?pageSize=20')
+    let params=new HttpParams();
+if(brands && brands.length>0){
+  params=params.append('brands',brands.join(','));
+}
+if(types && types.length>0){
+  params=params.append('types',types.join(','));
+}
+params=params.append('pageSize', 20);
+   return  this.http.get<Pagination<Product>>(this.baseUrl+ 'products', {params})
   }
+
+
+
+
   getTypes(){
     if(this.types.length > 0)return;
   return this.http.get<string[]>(this.baseUrl+ 'products/types').subscribe({

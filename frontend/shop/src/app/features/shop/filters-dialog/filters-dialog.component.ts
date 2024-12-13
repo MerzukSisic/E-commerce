@@ -16,26 +16,26 @@ import {FormsModule} from '@angular/forms';
     FormsModule
   ],
   templateUrl: './filters-dialog.component.html',
+  standalone: true,
   styleUrl: './filters-dialog.component.scss'
 })
 export class FiltersDialogComponent {
-shopservice=inject(ShopService);
-private DialogRef=inject(MatDialogRef<FiltersDialogComponent>);
-data=inject(MAT_DIALOG_DATA);
+  shopservice = inject(ShopService);
+  private DialogRef = inject(MatDialogRef<FiltersDialogComponent>);
+  data = inject(MAT_DIALOG_DATA);
 
 
-selectedBrands: string[]=this.data.selectedBrands;
-selectedTypes: string[]=this.data.selectedTypes;
+  selectedBrands: string[] = this.data.selectedBrands;
+  selectedTypes: string[] = this.data.selectedTypes;
 
-applyFilters(){
+  applyFilters() {
 
-this.DialogRef.close({
-  selectedBrands:this.selectedBrands,
-  selectedTypes:this.selectedTypes
+    this.DialogRef.close({
+      selectedBrands: this.selectedBrands,
+      selectedTypes: this.selectedTypes
 
-})
-}
-
+    })
+  }
 
 
 }

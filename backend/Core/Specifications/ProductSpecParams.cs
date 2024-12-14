@@ -41,4 +41,7 @@ public class ProductSpecParams
         get => _search ?? "";
         set => _search = value.ToLower();
     }
+    
+    public decimal? minPrice {get; set;}
+    public decimal? maxPrice {get; set;}
 }

@@ -89,6 +89,8 @@ export class ShopComponent implements OnInit {
       data: {
         selectedBrands: this.shopParams.brands,
         selectedTypes: this.shopParams.types,
+        minPrice: this.shopParams.minPrice,
+        maxPrice: this.shopParams.maxPrice,
       }
     });
     DialogRef.afterClosed().subscribe({
@@ -97,6 +99,8 @@ export class ShopComponent implements OnInit {
           this.shopParams.brands = result.selectedBrands;
           this.shopParams.types = result.selectedTypes;
           this.shopParams.pageNumber = 1;
+          this.shopParams.minPrice = result.minPrice;
+          this.shopParams.maxPrice = result.maxPrice;
           this.getProducts();
         }
       }

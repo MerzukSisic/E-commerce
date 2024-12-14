@@ -27,6 +27,12 @@ export class ShopService {
     if(shopParams.search){
       params = params.append('search', shopParams.search);
     }
+    if (shopParams.minPrice != null) {
+      params = params.append('minPrice', shopParams.minPrice.toString());
+    }
+    if (shopParams.maxPrice != null) {
+      params = params.append('maxPrice', shopParams.maxPrice.toString());
+    }
 
     params = params.append('pageSize', shopParams.pageSize);
     params = params.append('pageIndex', shopParams.pageNumber);

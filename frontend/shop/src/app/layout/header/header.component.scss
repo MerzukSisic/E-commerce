@@ -25,3 +25,9 @@ nav
   height: 32px;
   line-height: 24px;
 }
+
+a{
+  &.active{
+    color:#7d00fa;
+  }
+}

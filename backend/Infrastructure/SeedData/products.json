@@ -1,92 +1,92 @@
 ﻿[
   {
-    "Name": "Adidas Ultraboost Shoes",
-    "Description": "High-performance running shoes designed for long-distance comfort and superior energy return.",
-    "Price": 129.99,
-    "PictureUrl": "https://example.com/images/adidas-ultraboost.jpg",
-    "Type": "Footwear",
+    "Name": "Nike Sportswear Club Hoodie",
+    "Description": "Comfortable and stylish hoodie made with soft fleece fabric, perfect for casual wear.",
+    "Price": 59.99,
+    "PictureUrl": "https://www.sportsdirect.com/images/products/53101203_l.jpg",
+    "Type": "Hoodies",
+    "Brand": "Nike",
+    "QuantityInStock": 40
+  },
+  {
+    "Name": "Adidas Essentials 3-Stripes T-Shirt",
+    "Description": "Classic Adidas T-shirt with iconic 3-Stripes design, ideal for everyday wear.",
+    "Price": 34.99,
+    "PictureUrl": "https://cdn.media.amplience.net/i/frasersdev/34350940_o?fmt=auto&upscale=false&w=1200&h=1200&sm=scaleFit&$h-ttl$",
+    "Type": "T-Shirts",
     "Brand": "Adidas",
+    "QuantityInStock": 50
+  },
+  {
+    "Name": "Puma Evostripe Full-Zip Hoodie",
+    "Description": "Lightweight hoodie with ergonomic cut lines for flexibility and comfort.",
+    "Price": 69.99,
+    "PictureUrl": "https://www.intersport.ba/media/catalog/product/cache/5864b084779f11fa289096d3dce89f9c//6/7/678995-01_6.jpg",
+    "Type": "Hoodies",
+    "Brand": "Puma",
+    "QuantityInStock": 30
+  },
+  {
+    "Name": "The North Face ThermoBall Eco Jacket",
+    "Description": "Warm and lightweight jacket made with recycled materials, ideal for outdoor adventures.",
+    "Price": 149.99,
+    "PictureUrl": "https://thenorthface.com.au/dw/image/v2/BDFS_PRD/on/demandware.static/-/Sites-northface-master-catalog/default/dwe4f3e07d/images/NF0A7UL5/NF0A7UL5JK3_1.jpg?sw=1000&sh=1000",
+    "Type": "Jackets",
+    "Brand": "The North Face",
+    "QuantityInStock": 20
+  },
+  {
+    "Name": "Nike Pro Dri-FIT T-Shirt",
+    "Description": "Breathable and sweat-wicking T-shirt for high-performance workouts.",
+    "Price": 39.99,
+    "PictureUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/70bacad1-750f-4e3a-a6f0-e09291d1ecff/M+NP+DF+TIGHT+TOP+LS.png",
+    "Type": "T-Shirts",
+    "Brand": "Nike",
+    "QuantityInStock": 45
+  },
+  {
+    "Name": "Adidas ZNE Full-Zip Hoodie",
+    "Description": "Modern and comfortable hoodie designed for focus and warmth.",
+    "Price": 79.99,
+    "PictureUrl": "https://www.thespot.ba/media/opti_image/webp/catalog/product/cache/3ac2c2ca810e0f6b8d2e5f73140327fa/1/7/1724911661JE7538.webp",
+    "Type": "Hoodies",
+    "Brand": "Adidas",
+    "QuantityInStock": 35
+  },
+  {
+    "Name": "Puma Essentials Logo T-Shirt",
+    "Description": "Simple and stylish T-shirt with the Puma logo for a casual look.",
+    "Price": 29.99,
+    "PictureUrl": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_450,h_450/global/586667/51/fnd/IND/fmt/png/Essentials-Men's-Logo-T-Shirt",
+    "Type": "T-Shirts",
+    "Brand": "Puma",
+    "QuantityInStock": 60
+  },
+  {
+    "Name": "The North Face Resolve 2 Jacket",
+    "Description": "Waterproof and breathable jacket designed for rainy conditions.",
+    "Price": 119.99,
+    "PictureUrl": "https://images.thenorthface.com/is/image/TheNorthFace/NF0A2VCU_JK3_altfront?wid=1300&hei=1510&fmt=jpeg&qlt=50&resMode=sharp",
+    "Type": "Jackets",
+    "Brand": "The North Face",
     "QuantityInStock": 25
   },
   {
-    "Name": "Nike Air Max 270",
-    "Description": "Iconic sneakers with a large air unit for enhanced comfort and style.",
-    "Price": 149.99,
-    "PictureUrl": "https://example.com/images/nike-airmax270.jpg",
-    "Type": "Footwear",
+    "Name": "Nike Tech Fleece Jacket",
+    "Description": "Innovative fleece jacket offering warmth without extra weight.",
+    "Price": 129.99,
+    "PictureUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwfd9e3b7d/nk/2a6/1/0/b/b/6/2a610bb6_4907_4f51_ace6_6b1d493b941f.jpg?sw=700&sh=700&sm=fit&q=100&strip=false",
+    "Type": "Jackets",
     "Brand": "Nike",
     "QuantityInStock": 30
   },
   {
-    "Name": "Wilson Pro Staff Tennis Racket",
-    "Description": "A professional-grade tennis racket designed for precision and control.",
-    "Price": 199.99,
-    "PictureUrl": "https://example.com/images/wilson-prostaff.jpg",
-    "Type": "Equipment",
-    "Brand": "Wilson",
-    "QuantityInStock": 15
-  },
-  {
-    "Name": "Under Armour HeatGear T-Shirt",
-    "Description": "Lightweight and breathable T-shirt perfect for intense workouts.",
-    "Price": 34.99,
-    "PictureUrl": "https://example.com/images/ua-heatgear.jpg",
-    "Type": "Apparel",
-    "Brand": "Under Armour",
-    "QuantityInStock": 60
-  },
-  {
-    "Name": "Puma Future Soccer Ball",
-    "Description": "Top-quality soccer ball for match play with improved durability.",
-    "Price": 39.99,
-    "PictureUrl": "https://example.com/images/puma-future-ball.jpg",
-    "Type": "Balls",
-    "Brand": "Puma",
-    "QuantityInStock": 50
-  },
-  {
-    "Name": "Everlast Powerlock Boxing Gloves",
-    "Description": "Durable boxing gloves designed for protection and optimal power.",
-    "Price": 79.99,
-    "PictureUrl": "https://example.com/images/everlast-powerlock.jpg",
-    "Type": "Gloves",
-    "Brand": "Everlast",
-    "QuantityInStock": 20
-  },
-  {
-    "Name": "Yonex Mavis 2000 Shuttlecock",
-    "Description": "Premium synthetic shuttlecock with great flight stability.",
-    "Price": 19.99,
-    "PictureUrl": "https://example.com/images/yonex-mavis2000.jpg",
-    "Type": "Equipment",
-    "Brand": "Yonex",
-    "QuantityInStock": 100
-  },
-  {
-    "Name": "Reebok Yoga Mat",
-    "Description": "High-quality, non-slip yoga mat for comfortable floor exercises.",
-    "Price": 49.99,
-    "PictureUrl": "https://example.com/images/reebok-yoga-mat.jpg",
-    "Type": "Mats",
-    "Brand": "Reebok",
-    "QuantityInStock": 45
-  },
-  {
-    "Name": "Speedo V-Class Swimming Goggles",
-    "Description": "UV-protected goggles with anti-fog technology for a clear view underwater.",
-    "Price": 29.99,
-    "PictureUrl": "https://example.com/images/speedo-vclass.jpg",
-    "Type": "Accessories",
-    "Brand": "Speedo",
-    "QuantityInStock": 80
-  },
-  {
-    "Name": "Decathlon Adjustable Dumbbells",
-    "Description": "Adjustable dumbbells for versatile strength training exercises.",
-    "Price": 89.99,
-    "PictureUrl": "https://example.com/images/decathlon-dumbbells.jpg",
-    "Type": "Weights",
-    "Brand": "Decathlon",
-    "QuantityInStock": 35
+    "Name": "Adidas Own The Run Jacket",
+    "Description": "Lightweight and water-repellent jacket for outdoor running.",
+    "Price": 99.99,
+    "PictureUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/237f0ce36bb54a79b372c6a02e34f99c_9366/Own_the_Run_Jacket_Black_IN1483_21_model.jpg",
+    "Type": "Jackets",
+    "Brand": "Adidas",
+    "QuantityInStock": 40
   }
 ]

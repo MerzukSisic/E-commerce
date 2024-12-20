@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {MatCard} from '@angular/material/card';
-import {HttpErrorResponse} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 @Component({

@@ -16,7 +16,6 @@ public class ExceptionMiddleware(IHostEnvironment env, RequestDelegate next)
         catch (Exception ex)
         {
             await HandleExceptionAsync(context, ex, env);
-            throw;
         }
     }
     private static Task HandleExceptionAsync(HttpContext context, Exception ex, IHostEnvironment env)

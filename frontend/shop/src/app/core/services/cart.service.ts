@@ -14,7 +14,7 @@ export class CartService {
 
   getCart(id: string) {
     return this.http.get<Cart>(this.baseUrl + 'cart?id=' + id).subscribe({
-      next: cart => this.cart.set(cart)
+      next: cart => this.cart.set(cart),
     })
   }
 
@@ -48,7 +48,7 @@ export class CartService {
   private mapProductToCartItem(item: Product): CartItem {
     return {
       productId: item.id,
-      productName: item.name,
+      name: item.name,
       price: item.price,
       quantity: 0,
       pictureUrl: item.pictureUrl,
@@ -57,12 +57,11 @@ export class CartService {
     }
   }
 
-
   private isProduct(item: CartItem | Product): item is Product {
     return (item as Product).id !== undefined;
   }
 
-  private createCart(): Cart | null {
+  private createCart(): Cart {
     const cart = new Cart();
     localStorage.setItem('cart_id', cart.id);
     return cart;

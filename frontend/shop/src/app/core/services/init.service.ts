@@ -1,6 +1,5 @@
 import {inject, Injectable} from '@angular/core';
 import {CartService} from './cart.service';
-import {coerceArray} from '@angular/cdk/coercion';
 import {of} from 'rxjs';
 
 @Injectable({

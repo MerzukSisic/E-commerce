@@ -22,5 +22,4 @@ import {CurrencyPipe} from '@angular/common';
 })
 export class OrderSummaryComponent {
   cartService= inject(CartService);
-  protected readonly catchError = catchError;
 }

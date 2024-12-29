@@ -15,13 +15,13 @@ import {FormsModule} from '@angular/forms';
   selector: 'app-product-details',
   imports: [
     CurrencyPipe,
-    MatButton,
-    MatIcon,
     MatFormField,
     MatInput,
     MatLabel,
+    FormsModule,
+    MatButton,
     MatDivider,
-    FormsModule
+    MatIcon
   ],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss'
@@ -50,18 +50,17 @@ export class ProductDetailsComponent implements OnInit {
     })
   }
 
-  updateCart(){
-    if(!this.product) return;
-    if(this.quantityInCart > this.quantity) {
-      const itemsToAdd = this.quantityInCart - this.quantityInCart;
+  updateCart() {
+    if (!this.product) return;
+    if (this.quantity > this.quantityInCart) {
+      const itemsToAdd = this.quantity - this.quantityInCart;
       this.quantityInCart += itemsToAdd;
       this.cartService.addItemToCart(this.product, itemsToAdd);
-    }else{
+    } else {
       const itemsToRemove = this.quantityInCart - this.quantity;
       this.quantityInCart -= itemsToRemove;
       this.cartService.removeItemFromCart(this.product.id, itemsToRemove);
     }
-
   }
 
   updateQuantityInCart() {

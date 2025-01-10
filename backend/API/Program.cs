@@ -47,7 +47,11 @@ app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod()
     .WithOrigins("http://localhost:4200", "https://localhost:4200"));
 
 app.MapControllers();
-app.MapIdentityApi<AppUser>();
+var identityApiGroup = app.MapGroup("/api");
+identityApiGroup.MapIdentityApi<AppUser>();
+
+
+
 try
 {
     using var scope = app.Services.CreateScope();

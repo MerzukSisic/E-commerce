@@ -18,7 +18,7 @@ login(values: any)
 {
   let params=new HttpParams();
   params=params.append('useCookies', true);
-  return this.http.post<User>(this.baseUrl+ 'login',values, {params});
+  return this.http.post<User>(this.baseUrl+ 'login',values, {params, withCredentials: true});
 }
 
 
@@ -28,14 +28,14 @@ return this.http.post(this.baseUrl+'account/register',values);
 }
 
 getUserInfo(){
-  return this.http.get<User>(this.baseUrl+'account/user-info').subscribe({
+  return this.http.get<User>(this.baseUrl+'account/user-info',{withCredentials: true}).subscribe({
     next: user=>this.currentUser.set(user)
   })
 }
 
 
 logout(){
-  return this.http.post(this.baseUrl+'account/logout',{});
+  return this.http.post(this.baseUrl+'account/logout',{},{withCredentials: true});
 }
 
 updateAddress(address: Address){

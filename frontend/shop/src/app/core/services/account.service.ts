@@ -47,4 +47,8 @@ updateAddress(address: Address){
   return this.http.post(this.baseUrl+'account/address',address);
 }
 
+getAuthState(){
+  return this.http.get<{isAuthenticated:boolean}>(this.baseUrl+ 'account/auth-status');
+}
+
 }

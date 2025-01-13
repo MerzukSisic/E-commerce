@@ -64,7 +64,7 @@ public async Task<ActionResult> GetUserInfo()
     });
 }
 
-[HttpGet]
+[HttpGet("auth-status")]
 
 public ActionResult GetAuthState()
 {

@@ -8,7 +8,7 @@ import {StripeAddressElement} from '@stripe/stripe-js';
 import {SnackbarService} from '../../core/services/snackbar.service';
 import {MatCheckboxChange, MatCheckboxModule} from '@angular/material/checkbox';
 import {StepperSelectionEvent} from '@angular/cdk/stepper';
-import { Address } from '../../shared/models/user';
+import {Address} from '../../shared/models/user';
 import {firstValueFrom} from 'rxjs';
 import {AccountService} from '../../core/services/account.service';
 import {CheckoutDeliveryComponent} from './checkout-delivery/checkout-delivery.component';
@@ -29,7 +29,7 @@ import {CheckoutDeliveryComponent} from './checkout-delivery/checkout-delivery.c
 export class CheckoutComponent implements OnInit {
   private stripeService = inject(StripeService);
   private snackBar = inject(SnackbarService);
-  private accountService=inject(AccountService);
+  private accountService = inject(AccountService);
   addressElement?: StripeAddressElement;
   saveAddress = false;
 
@@ -49,6 +49,9 @@ export class CheckoutComponent implements OnInit {
         address && firstValueFrom(this.accountService.updateAddress(address));
       }
     }
+    if (event.selectedIndex === 2) {
+      await firstValueFrom(this.stripeService.createOrUpdatePaymentIntent());
+    }
   }
 
   private async getAddressFromStripeAddress(): Promise<Address | null> {
@@ -64,8 +67,7 @@ export class CheckoutComponent implements OnInit {
         state: address.state,
         postalCode: address.postal_code,
       }
-    }
-    else return null;
+    } else return null;
 
   }
 

@@ -26,14 +26,13 @@
     </div>
 
     <!-- Checkout Buttons -->
+    @if(location.path() != '/checkout'){
     <div class="flex flex-col gap-2">
-      <button routerLink="/checkout" mat-flat-button color="primary" class="w-full">
-        Checkout
-      </button>
-      <button routerLink="/shop" mat-button color="accent" class="w-full">
-        Continue Shopping
-      </button>
+      <button routerLink="/checkout" mat-flat-button color="primary" class="w-full">Checkout</button>
+
+      <button routerLink="/shop" mat-button color="accent" class="w-full">Continue Shopping</button>
     </div>
+    }
   </div>
 
   <!-- Voucher Section -->

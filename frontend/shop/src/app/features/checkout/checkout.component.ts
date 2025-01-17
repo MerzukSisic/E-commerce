@@ -7,6 +7,7 @@ import {StripeService} from '../../core/services/stripe.service';
 import {
   StripeAddressElement,
   StripeAddressElementChangeEvent,
+  StripePaymentElement,
   StripePaymentElementChangeEvent
 } from '@stripe/stripe-js';
 import {SnackbarService} from '../../core/services/snackbar.service';
@@ -41,7 +42,7 @@ export class CheckoutComponent implements OnInit,OnDestroy {
   private accountService = inject(AccountService);
   cartService = inject(CartService);
   addressElement?: StripeAddressElement;
-//  paymentElement?: StripePaymentElement;
+  paymentElement?: StripePaymentElement;
   saveAddress = false;
   completionStatus = signal<{ address: boolean, card: boolean, delivery: boolean }>(
     {address: false, card: false, delivery: false},
@@ -53,9 +54,9 @@ export class CheckoutComponent implements OnInit,OnDestroy {
       this.addressElement.mount('#address-element');
       this.addressElement.on('change', this.handleAddressChange);
 
-//      this.paymentElement = await this.stripeService.createPaymentElement();
-//      this.paymentElement.mount('#payment-element');
-//      this.paymentElement.on('change', this.handlePaymentChange);
+      this.paymentElement = await this.stripeService.createPaymentElement();
+      this.paymentElement.mount('#payment-element');
+      this.paymentElement.on('change', this.handlePaymentChange);
 
     } catch (error: any) {
       this.snackBar.error(error.message);

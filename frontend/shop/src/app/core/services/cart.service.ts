@@ -119,7 +119,7 @@ export class CartService {
   }
 
   // Briše korpu sa servera i iz Local Storage-a.
-  private deleteCart() {
+   deleteCart() {
     this.http.delete(this.baseUrl + 'cart?id=' + this.cart()?.id).subscribe({
       next: () => {
         localStorage.removeItem('cart_id'); // Briše ID korpe iz Local Storage-a.

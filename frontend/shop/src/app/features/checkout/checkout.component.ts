@@ -21,6 +21,7 @@ import {CheckoutDeliveryComponent} from './checkout-delivery/checkout-delivery.c
 import {CheckoutReviewComponent} from './checkout-review/checkout-review.component';
 import {CartService} from '../../core/services/cart.service';
 import {CurrencyPipe} from '@angular/common';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-checkout',
@@ -32,7 +33,8 @@ import {CurrencyPipe} from '@angular/common';
     MatCheckboxModule,
     CheckoutDeliveryComponent,
     CheckoutReviewComponent,
-    CurrencyPipe
+    CurrencyPipe,
+    MatProgressSpinnerModule
   ],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss'
@@ -46,6 +48,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   addressElement?: StripeAddressElement;
   paymentElement?: StripePaymentElement;
   saveAddress = false;
+  loading = false;
   completionStatus = signal<{ address: boolean, card: boolean, delivery: boolean }>(
     {address: false, card: false, delivery: false},
   );
@@ -122,19 +125,22 @@ export class CheckoutComponent implements OnInit, OnDestroy {
   }
 
   async confirmPayment(stepper: MatStepper) {
+    this.loading = true;
     try {
-      if(this.confirmationToken) {
+      if (this.confirmationToken) {
         const result = await this.stripeService.confirmPayment(this.confirmationToken);
-        if(result.error) throw new Error(result.error.message);
-        else{
+        if (result.error) throw new Error(result.error.message);
+        else {
           this.cartService.deleteCart();
           this.cartService.selectedDelivery.set(null);
           this.router.navigateByUrl('/checkout/success');
         }
       }
-    }catch (error:any ){
+    } catch (error: any) {
       this.snackBar.error(error.message || "Something went wrong");
       stepper.previous();
+    } finally {
+      this.loading = false;
     }
   }
 

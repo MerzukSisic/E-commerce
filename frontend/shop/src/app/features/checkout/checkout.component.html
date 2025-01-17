@@ -18,7 +18,8 @@
           <button class="z-0" routerLink="/shop" mat-stroked-button>Continue shopping</button>
           <button
             [disabled]="!completionStatus().address"
-            class="z-0" matStepperNext mat-flat-button>Next</button>
+            class="z-0" matStepperNext mat-flat-button>Next
+          </button>
         </div>
       </mat-step>
       <mat-step label="Shipping" [completed]="completionStatus().delivery">
@@ -27,7 +28,8 @@
           <button matStepperPrevious mat-stroked-button>Back</button>
           <button
             [disabled]="!completionStatus().delivery"
-            matStepperNext mat-flat-button>Next</button>
+            matStepperNext mat-flat-button>Next
+          </button>
         </div>
       </mat-step>
       <mat-step label="Payment" [completed]="completionStatus().card">
@@ -36,14 +38,23 @@
           <button matStepperPrevious mat-stroked-button>Back</button>
           <button
             [disabled]="!completionStatus().card"
-            matStepperNext mat-flat-button>Next</button>
+            matStepperNext mat-flat-button>Next
+          </button>
         </div>
       </mat-step>
       <mat-step label="Confirmation">
         <app-checkout-review [confirmationToken]="confirmationToken"></app-checkout-review>
         <div class="flex justify-between mt-6">
           <button matStepperPrevious mat-stroked-button>Back</button>
-          <button matStepperNext mat-flat-button>Pay {{cartService.totals()?.total | currency}}</button>
+          <button
+          [disabled]="!confirmationToken || loading"
+            (click)="confirmPayment(stepper)" mat-flat-button>
+            @if (loading) {
+              <mat-spinner diameter="20"></mat-spinner>
+            } @else {
+              <span>Pay {{ cartService.totals()?.total | currency }} </span>
+            }
+          </button>
         </div>
       </mat-step>
     </mat-stepper>

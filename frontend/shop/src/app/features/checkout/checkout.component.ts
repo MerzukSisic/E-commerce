@@ -1,7 +1,7 @@
 import {Component, inject, OnDestroy, OnInit, signal} from '@angular/core';
 import {OrderSummaryComponent} from '../../shared/components/order-summary/order-summary.component';
-import {MatStepperModule} from '@angular/material/stepper';
-import {RouterLink} from '@angular/router';
+import {MatStepper, MatStepperModule} from '@angular/material/stepper';
+import {Router, RouterLink} from '@angular/router';
 import {MatButton} from '@angular/material/button';
 import {StripeService} from '../../core/services/stripe.service';
 import {
@@ -21,6 +21,7 @@ import {CheckoutDeliveryComponent} from './checkout-delivery/checkout-delivery.c
 import {CheckoutReviewComponent} from './checkout-review/checkout-review.component';
 import {CartService} from '../../core/services/cart.service';
 import {CurrencyPipe} from '@angular/common';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-checkout',
@@ -32,19 +33,22 @@ import {CurrencyPipe} from '@angular/common';
     MatCheckboxModule,
     CheckoutDeliveryComponent,
     CheckoutReviewComponent,
-    CurrencyPipe
+    CurrencyPipe,
+    MatProgressSpinnerModule
   ],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss'
 })
-export class CheckoutComponent implements OnInit,OnDestroy {
+export class CheckoutComponent implements OnInit, OnDestroy {
   private stripeService = inject(StripeService);
   private snackBar = inject(SnackbarService);
   private accountService = inject(AccountService);
   cartService = inject(CartService);
+  private router = inject(Router);
   addressElement?: StripeAddressElement;
   paymentElement?: StripePaymentElement;
   saveAddress = false;
+  loading = false;
   completionStatus = signal<{ address: boolean, card: boolean, delivery: boolean }>(
     {address: false, card: false, delivery: false},
   );
@@ -70,6 +74,7 @@ export class CheckoutComponent implements OnInit,OnDestroy {
   ngOnDestroy(): void {
     this.stripeService.disposeElements();
   }
+
   handleAddressChange = (event: StripeAddressElementChangeEvent) => {
     this.completionStatus.update(state => {
       state.address = event.complete;
@@ -90,19 +95,19 @@ export class CheckoutComponent implements OnInit,OnDestroy {
       return state;
     })
   }
-async getConfirmationToken(){
-  try {
-    if(Object.values(this.completionStatus()).every(status=>status===true))
-  {
-    const result=await this.stripeService.createConfirmationToken();
-    if(result.error) throw new Error(result.error.message);
-    this.confirmationToken=result.confirmationToken;
-    console.log(this.confirmationToken);
+
+  async getConfirmationToken() {
+    try {
+      if (Object.values(this.completionStatus()).every(status => status === true)) {
+        const result = await this.stripeService.createConfirmationToken();
+        if (result.error) throw new Error(result.error.message);
+        this.confirmationToken = result.confirmationToken;
+        console.log(this.confirmationToken);
+      }
+    } catch (error: any) {
+      this.snackBar.error(error.message);
+    }
   }
-  } catch (error:any) {
-    this.snackBar.error(error.message);
-  }
-}
 
   async onStepChange(event: StepperSelectionEvent) {
     if (event.selectedIndex === 1) {
@@ -114,8 +119,28 @@ async getConfirmationToken(){
     if (event.selectedIndex === 2) {
       await firstValueFrom(this.stripeService.createOrUpdatePaymentIntent());
     }
-    if(event.selectedIndex===3){
+    if (event.selectedIndex === 3) {
       await this.getConfirmationToken();
+    }
+  }
+
+  async confirmPayment(stepper: MatStepper) {
+    this.loading = true;
+    try {
+      if (this.confirmationToken) {
+        const result = await this.stripeService.confirmPayment(this.confirmationToken);
+        if (result.error) throw new Error(result.error.message);
+        else {
+          this.cartService.deleteCart();
+          this.cartService.selectedDelivery.set(null);
+          this.router.navigateByUrl('/checkout/success');
+        }
+      }
+    } catch (error: any) {
+      this.snackBar.error(error.message || "Something went wrong");
+      stepper.previous();
+    } finally {
+      this.loading = false;
     }
   }
 

@@ -1,18 +1,22 @@
 ﻿using Core.Entities;
-using Core.Entities.Interfaces;
+using Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data;
 
 public class ProductRepository(StoreContext context) : IProductRepository
 {
-    public async Task<IReadOnlyList<Product>> GetProductsAsync(string? brand, string? type,string? sort)
+    public async Task<IReadOnlyList<Product>> GetProductsAsync(string? brand, string? type,string? sort,decimal? minPrice, decimal? maxPrice)
     {
         var query=context.Products.AsQueryable();
         if(!string.IsNullOrWhiteSpace(brand))
             query = query.Where(p => p.Brand == brand);
         if(!string.IsNullOrWhiteSpace(type))
             query = query.Where(p => p.Type == type);
+        if (minPrice.HasValue)
+            query = query.Where(p => p.Price >= minPrice.Value);
+        if (maxPrice.HasValue)
+            query = query.Where(p => p.Price <= maxPrice.Value);
 
         query = sort switch
         {

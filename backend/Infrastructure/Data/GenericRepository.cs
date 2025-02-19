@@ -1,6 +1,3 @@
-using System;
-using System.Buffers.Text;
-using System.Security.Cryptography.X509Certificates;
 using Core.Entities;
 using Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -61,12 +58,7 @@ public class GenericRepository<T>(StoreContext context) : IGenericRepository<T> 
     {
        context.Set<T>().Remove(entity);
     }
-
-    public async Task<bool> SaveAllAsync()
-    {
-        return await context.SaveChangesAsync() >0;
-    }
-
+    
     public void Update(T entity)
     {
         context.Set<T>().Attach(entity);

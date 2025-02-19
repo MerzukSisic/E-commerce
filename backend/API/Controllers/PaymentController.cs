@@ -1,34 +1,28 @@
 using Core.Entities;
 using Core.Interfaces;
-using Infrastructure.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers;
 
-
-
-public class PaymentController(IPaymentService paymentService, IGenericRepository<DeliveryMethod> dmRepo): BaseApiController
+public class PaymentController(IPaymentService paymentService, 
+    IUnitOfWork unit)
+    : BaseApiController
 {
+    [Authorize]
+    [HttpPost("{cartId}")]
+    public async Task<ActionResult<ShoppingCart>> CreateOrUpdatePaymentIntent(string cartId)
+    {
+        var cart = await paymentService.CreateOrUpdatePaymentIntent(cartId);
 
-[Authorize]
-[HttpPost("{cartId}")]
+        if (cart == null) return BadRequest("Problem with your cart");
 
-public async Task<ActionResult<ShoppingCart>> CreateOrUpdatePaymentIntent(string cartId){
-var cart= await paymentService.CreateOrUpdatePaymentIntent(cartId);
+        return Ok(cart);
+    }
 
-if(cart==null) return BadRequest("Problem with your cart");
- 
- return Ok(cart);
-}
-
-[HttpGet("delivery-methods")]
-public async Task<ActionResult<IReadOnlyList<DeliveryMethod>>> GetDeliveryMethods()
-{
-
-    return Ok(await dmRepo.ListAllAsync());
-}
-
-
-
+    [HttpGet("delivery-methods")]
+    public async Task<ActionResult<IReadOnlyList<DeliveryMethod>>> GetDeliveryMethods()
+    {
+        return Ok(await unit.Repository<DeliveryMethod>().ListAllAsync());
+    }
 }

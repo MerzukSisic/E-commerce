@@ -42,7 +42,7 @@ public class OrdersController(ICartService cartService, IUnitOfWork unit) : Base
             {
                 ItemOrdered = itemOrdered,
                 Price = productItem.Price,
-                Quantity = productItem.QuantityInStock
+                Quantity = item.Quantity,
             };
             items.Add(orderItem);
         }

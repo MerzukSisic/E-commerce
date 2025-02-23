@@ -1,8 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
-import {OrderToCreate} from '../../shared/models/order';
-import Order = jasmine.Order;
+import {Order, OrderToCreate} from '../../shared/models/order';
 
 @Injectable({
   providedIn: 'root'

@@ -11,11 +11,12 @@
           <h4 class="text-lg font-bold text-gray-700">Billing & Delivery Information</h4>
           <dl>
             <dt class="text-sm font-bold text-gray-600">Shipping Address</dt>
-            <dd class="mt-1 text-gray-800">{{ order.shippingAddress | address }}</dd>
+            <dd class="mt-1 text-gray-800">{{ order.shippingAddress
+            | address }}</dd>
           </dl>
           <dl>
             <dt class="text-sm font-bold text-gray-600">Payment Information</dt>
-            <dd class="mt-1 text-gray-800">{{ order.paymentSummary}}</dd>
+            <dd class="mt-1 text-gray-800">{{ order.paymentSummary | payment }}</dd>
           </dl>
         </div>
         <div class="space-y-4">

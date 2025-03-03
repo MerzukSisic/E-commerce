@@ -1,36 +1,39 @@
 @if (product) {
-  <section class="py-8">
-    <div class="max-w-screen-2xl px-4 mx-auto">
-      <div class="grid grid-cols-2 gap-8">
-        <div class="max-w-xl mx-auto">
-          <img class="w-full" src="{{product.pictureUrl}}" alt="product image">
+  <section class="py-16 px-8 bg-gray-100 ">
+    <div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+      <div class="max-w-lg mx-auto">
+        <img class="w-full h-auto rounded-lg shadow-lg object-cover" src="{{ product.pictureUrl }}"
+             alt="{{ product.name }}">
+      </div>
+
+      <div class="text-black space-y-6">
+        <h1 class="text-5xl font-bold">{{ product.name }}</h1>
+        <p class="text-4xl text-gray-800 font-semibold">{{ product.price | currency }}</p>
+
+        <div class="mt-6 text-lg space-y-4">
+          <p><span class="font-semibold text-xl">Description:</span> {{ product.description }}</p>
+          <p><span class="font-semibold text-xl">Type:</span> {{ product.type }}</p>
+          <p><span class="font-semibold text-xl">Brand:</span> {{ product.brand }}</p>
+          <p><span class="font-semibold text-xl">Platform:</span> {{ product.platformType }}</p>
+          <p><span class="font-semibold text-xl">Quantity in stock:</span> {{ product.quantityInStock }}</p>
         </div>
+        <mat-divider></mat-divider>
 
-        <div>
-          <h1 class="text-2xl font-semibold text-gray-900">{{ product.name }}</h1>
-          <p>You have {{quantityInCart}} of this item in your cart </p>
-          <div class="mt-4 items-center gap-4 flex">
-            <p class="text-3xl font-extrabold text-gray-900">
-              {{ product.price | currency }}
-            </p>
-          </div>
-
-          <div class="flex gap-4 mt-6">
-            <button [disabled]="quantity === quantityInCart"
-                    (click)="updateCart()"
-                    mat-flat-button class="match-input-height">
-              <mat-icon>shopping_cart</mat-icon>
-              {{getButtonText()}}
-            </button>
-
-            <mat-form-field appearance="outline" class="flex">
-              <mat-label>Quantity</mat-label>
-              <input matInput min="0" [(ngModel)]="quantity" type="number"  >
-            </mat-form-field>
-          </div>
-
-          <mat-divider></mat-divider>
-          <p class="mt-6 text-gray-500">{{ product.description }}</p>
+        <div class="mt-8 text-lg">
+          <p>You have {{ quantityInCart }} of this item in your cart</p>
+        </div>
+        <div class="flex gap-4 mt-6">
+          <button [disabled]="quantity === quantityInCart"
+                  (click)="updateCart()"
+                  mat-flat-button class="match-input-height">
+            <mat-icon>shopping_cart</mat-icon>
+            {{ getButtonText() }}
+          </button>
+          <mat-form-field appearance="outline" class="flex">
+            <mat-label>Quantity</mat-label>
+            <input matInput min="0" [(ngModel)]="quantity" type="number">
+          </mat-form-field>
         </div>
       </div>
     </div>

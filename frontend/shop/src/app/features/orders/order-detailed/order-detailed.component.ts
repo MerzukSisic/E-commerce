@@ -5,6 +5,7 @@ import {Order} from '../../../shared/models/order';
 import {MatCard} from '@angular/material/card';
 import {MatButton} from '@angular/material/button';
 import {AddressPipe} from '../../../shared/pipes/address.pipe';
+import { PaymentPipe } from '../../../shared/pipes/payment.pipe';
 import {CurrencyPipe, DatePipe} from '@angular/common';
 
 @Component({
@@ -15,7 +16,8 @@ import {CurrencyPipe, DatePipe} from '@angular/common';
     RouterLink,
     AddressPipe,
     CurrencyPipe,
-    DatePipe
+    DatePipe,
+    PaymentPipe
   ],
   templateUrl: './order-detailed.component.html',
   styleUrl: './order-detailed.component.scss'

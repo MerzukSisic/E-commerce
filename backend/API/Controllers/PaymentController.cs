@@ -1,10 +1,13 @@
 using System.Reflection.Metadata;
+using API.Extensions;
+using API.SignalR;
 using Core.Entities;
 using Core.Entities.OrderAggregate;
 using Core.Interfaces;
 using Core.Specifications;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.OpenApi.Writers;
 using Microsoft.VisualBasic;
 using Stripe;
@@ -12,7 +15,7 @@ using Stripe;
 namespace API.Controllers;
 
 public class PaymentController(IPaymentService paymentService, 
-    IUnitOfWork unit, ILogger<PaymentController> logger, IConfiguration config)
+    IUnitOfWork unit, ILogger<PaymentController> logger, IConfiguration config, IHubContext<NotificationHub> hubContext)
     : BaseApiController
 {
 
@@ -80,6 +83,13 @@ public class PaymentController(IPaymentService paymentService,
             order.Status=OrderStatus.PaymentReceived;
         }
         await unit.Complete();
+
+        var connectionId=NotificationHub.GetConnectionIdByEmail(order.BuyerEmail);
+
+        if(!string.IsNullOrEmpty(connectionId))
+        {
+            await hubContext.Clients.Client(connectionId).SendAsync("OrderCompleteNotification", order.ToDto());
+        }
 
        }
     }

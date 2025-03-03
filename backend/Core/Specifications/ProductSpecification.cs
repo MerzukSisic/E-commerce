@@ -9,7 +9,8 @@ public class ProductSpecification : BaseSpecification<Product>
         (specParams.Brands.Count == 0 || specParams.Brands.Contains(x.Brand)) &&
         (specParams.Types.Count == 0 || specParams.Types.Contains(x.Type)) &&
         (!specParams.minPrice.HasValue || x.Price >= specParams.minPrice.Value) &&
-        (!specParams.maxPrice.HasValue || x.Price <= specParams.maxPrice.Value))
+        (!specParams.maxPrice.HasValue || x.Price <= specParams.maxPrice.Value) &&
+        (!specParams.Platform.HasValue || x.PlatformType == specParams.Platform))
     {
         ApplyPaging(specParams.PageSize * (specParams.PageIndex - 1),
             specParams.PageSize);

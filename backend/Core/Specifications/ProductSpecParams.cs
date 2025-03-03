@@ -1,4 +1,6 @@
-﻿namespace Core.Specifications;
+﻿using Core.Entities;
+
+namespace Core.Specifications;
 
 public class ProductSpecParams
 {
@@ -44,4 +46,6 @@ public class ProductSpecParams
     
     public decimal? minPrice {get; set;}
     public decimal? maxPrice {get; set;}
+    
+    public Platform? Platform { get; set; } 
 }

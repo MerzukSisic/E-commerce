@@ -1,19 +1,17 @@
 @if (product) {
-  <mat-card appearance="raised" routerLink="/shop/{{product.id}}" class="product-card">
-
-    <img src="{{product.pictureUrl}}" alt="Picture of {{product.name}}">
-
-    <mat-card-content class="mt-2">
+  <mat-card appearance="raised" routerLink="/shop/{{product.id}}" class="product-card flex flex-col h-full bg-gray-100">
+    <div class="w-full h-64">
+      <img class="w-full h-full object-fill" src="{{product.pictureUrl}}" alt="product image">
+    </div>
+    <mat-card-content class="flex-1 text-center">
       <h2 class="text-sm font-semibold uppercase">{{ product.name }}</h2>
       <p class="font-light">{{ product.price | currency }}</p>
     </mat-card-content>
-    <mat-card-actions (click)="$event.stopPropagation()">
+    <mat-card-actions class="mt-auto" (click)="$event.stopPropagation()">
       <button mat-stroked-button class="w-full" (click)="cartService.addItemToCart(product)">
         <mat-icon>add_shopping_cart</mat-icon>
         Add to cart
       </button>
     </mat-card-actions>
   </mat-card>
-
-
 }

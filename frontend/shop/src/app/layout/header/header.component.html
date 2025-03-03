@@ -11,8 +11,11 @@
         Home
       </a>
       <a routerLink="/shop" routerLinkActive="active">Shop</a>
-      <a routerLink="/test" routerLinkActive="active">Women</a>
-      <a routerLink="/test" routerLinkActive="active">Men</a>
+      <a routerLink="/shop" [queryParams]="{ platform: 'PC' }" routerLinkActive="active">PC</a>
+      <a routerLink="/shop" [queryParams]="{ platform: 'Nintendo' }" routerLinkActive="active">Nintendo</a>
+      <a routerLink="/shop" [queryParams]="{ platform: 'PlayStation' }" routerLinkActive="active">PlayStation</a>
+      <a routerLink="/shop" [queryParams]="{ platform: 'Xbox' }" routerLinkActive="active">Xbox</a>
+      <a routerLink="/shop" [queryParams]="{ platform: 'Mobile' }" routerLinkActive="active">Mobile</a>
       <a routerLink="/test-error" routerLinkActive="active">Test error</a>
     </nav>
     <div class="flex gap-3 align-middle justify-end mr-5">
@@ -24,15 +27,14 @@
         class="custom-badge mt-2 mr-2">
         <mat-icon>shopping_cart</mat-icon>
       </a>
-      @if (accountService.currentUser()){
+      @if (accountService.currentUser()) {
         <button mat-button [mat-menu-trigger-for]="menu">
           <mat-icon>arrow_drop_down</mat-icon>
-          <span>{{accountService.currentUser()?.email}}</span>
+          <span>{{ accountService.currentUser()?.email }}</span>
         </button>
 
-      }
-      @else {
-        <button routerLink="/account/login"  mat-stroked-button>Login</button>
+      } @else {
+        <button routerLink="/account/login" mat-stroked-button>Login</button>
         <button routerLink="/account/register" mat-stroked-button>Register</button>
 
       }
@@ -47,7 +49,7 @@
 
 <mat-menu #menu="matMenu" class="py-4 px-4 min-w-[220px] shadow-lg rounded-lg bg-white">
   <button mat-menu-item class="flex items-center gap-4 px-3 py-2 hover:bg-gray-200 rounded-md" routerLink="/cart">
-    <mat-icon class="text-gray-600 pr-9" >shopping_cart</mat-icon>
+    <mat-icon class="text-gray-600 pr-9">shopping_cart</mat-icon>
     <span class="font-medium text-gray-700">My cart</span>
   </button>
   <button mat-menu-item class="flex items-center gap-4 px-3 py-2 hover:bg-gray-200 rounded-md" routerLink="/orders">

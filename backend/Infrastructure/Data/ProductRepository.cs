@@ -6,17 +6,20 @@ namespace Infrastructure.Data;
 
 public class ProductRepository(StoreContext context) : IProductRepository
 {
-    public async Task<IReadOnlyList<Product>> GetProductsAsync(string? brand, string? type,string? sort,decimal? minPrice, decimal? maxPrice)
+    public async Task<IReadOnlyList<Product>> GetProductsAsync(string? brand, string? type, string? sort,
+        decimal? minPrice, decimal? maxPrice, Platform? platform)
     {
-        var query=context.Products.AsQueryable();
-        if(!string.IsNullOrWhiteSpace(brand))
+        var query = context.Products.AsQueryable();
+        if (!string.IsNullOrWhiteSpace(brand))
             query = query.Where(p => p.Brand == brand);
-        if(!string.IsNullOrWhiteSpace(type))
+        if (!string.IsNullOrWhiteSpace(type))
             query = query.Where(p => p.Type == type);
         if (minPrice.HasValue)
             query = query.Where(p => p.Price >= minPrice.Value);
         if (maxPrice.HasValue)
             query = query.Where(p => p.Price <= maxPrice.Value);
+        if (platform.HasValue)
+            query = query.Where(p => p.PlatformType == platform.Value);
 
         query = sort switch
         {
@@ -50,6 +53,7 @@ public class ProductRepository(StoreContext context) : IProductRepository
     {
         context.Add(product);
     }
+
     public void UpdateProduct(Product product)
     {
         context.Entry(product).State = EntityState.Modified;

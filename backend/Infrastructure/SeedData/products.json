@@ -1,92 +1,642 @@
 ﻿[
   {
-    "Name": "Nike Sportswear Club Hoodie",
-    "Description": "Comfortable and stylish hoodie made with soft fleece fabric, perfect for casual wear.",
+    "Name": "The Legend of Zelda: Breath of the Wild",
+    "Description": "An epic open-world adventure in Hyrule.",
+    "Price": 49.99,
+    "PictureUrl": "https://cdn.mobygames.com/covers/8437180-the-legend-of-zelda-breath-of-the-wild-nintendo-switch-front-cov.jpg",
+    "Type": "Action-Adventure",
+    "Brand": "Nintendo",
+    "QuantityInStock": 15,
+    "PlatformType": 3
+  },
+  {
+    "Name": "God of War",
+    "Description": "A powerful and emotional journey with Kratos and Atreus.",
+    "Price": 49.99,
+    "PictureUrl": "https://cdn1.epicgames.com/offer/3ddd6a590da64e3686042d108968a6b2/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc2980749091d52751ffabb7b7",
+    "Type": "Action-Adventure",
+    "Brand": "Sony Interactive Entertainment",
+    "QuantityInStock": 20,
+    "PlatformType": 0
+  },
+  {
+    "Name": "God of War",
+    "Description": "A powerful and emotional journey with Kratos and Atreus.",
+    "Price": 19.99,
+    "PictureUrl": "https://cdn.mobygames.com/covers/8019897-god-of-war-playstation-4-front-cover.jpg",
+    "Type": "Action-Adventure",
+    "Brand": "Sony Interactive Entertainment",
+    "QuantityInStock": 20,
+    "PlatformType": 1
+  },
+  {
+    "Name": "The Last of Us Part II",
+    "Description": "A gripping and controversial story of revenge and survival.",
+    "Price": 32.00,
+    "PictureUrl": "https://cdn.mobygames.com/covers/9803854-the-last-of-us-part-ii-playstation-4-front-cover.jpg",
+    "Type": "Action-Adventure",
+    "Brand": "Sony Interactive Entertainment",
+    "QuantityInStock": 18,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Red Dead Redemption 2",
+    "Description": "An expansive and immersive Western epic.",
+    "Price": 19.99,
+    "PictureUrl": "https://cdn.mobygames.com/covers/18319416-red-dead-redemption-ii-xbox-one-front-cover.jpg",
+    "Type": "Action-Adventure",
+    "Brand": "Rockstar Games",
+    "QuantityInStock": 25,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Red Dead Redemption 2",
+    "Description": "An expansive and immersive Western epic.",
     "Price": 59.99,
-    "PictureUrl": "https://www.sportsdirect.com/images/products/53101203_l.jpg",
-    "Type": "Hoodies",
-    "Brand": "Nike",
-    "QuantityInStock": 40
+    "PictureUrl": "https://cdn.mobygames.com/covers/18319416-red-dead-redemption-ii-xbox-one-front-cover.jpg",
+    "Type": "Action-Adventure",
+    "Brand": "Rockstar Games",
+    "QuantityInStock": 25,
+    "PlatformType": 0
   },
   {
-    "Name": "Adidas Essentials 3-Stripes T-Shirt",
-    "Description": "Classic Adidas T-shirt with iconic 3-Stripes design, ideal for everyday wear.",
-    "Price": 34.99,
-    "PictureUrl": "https://cdn.media.amplience.net/i/frasersdev/34350940_o?fmt=auto&upscale=false&w=1200&h=1200&sm=scaleFit&$h-ttl$",
-    "Type": "T-Shirts",
-    "Brand": "Adidas",
-    "QuantityInStock": 50
-  },
-  {
-    "Name": "Puma Evostripe Full-Zip Hoodie",
-    "Description": "Lightweight hoodie with ergonomic cut lines for flexibility and comfort.",
-    "Price": 69.99,
-    "PictureUrl": "https://www.intersport.ba/media/catalog/product/cache/5864b084779f11fa289096d3dce89f9c//6/7/678995-01_6.jpg",
-    "Type": "Hoodies",
-    "Brand": "Puma",
-    "QuantityInStock": 30
-  },
-  {
-    "Name": "The North Face ThermoBall Eco Jacket",
-    "Description": "Warm and lightweight jacket made with recycled materials, ideal for outdoor adventures.",
-    "Price": 149.99,
-    "PictureUrl": "https://thenorthface.com.au/dw/image/v2/BDFS_PRD/on/demandware.static/-/Sites-northface-master-catalog/default/dwe4f3e07d/images/NF0A7UL5/NF0A7UL5JK3_1.jpg?sw=1000&sh=1000",
-    "Type": "Jackets",
-    "Brand": "The North Face",
-    "QuantityInStock": 20
-  },
-  {
-    "Name": "Nike Pro Dri-FIT T-Shirt",
-    "Description": "Breathable and sweat-wicking T-shirt for high-performance workouts.",
-    "Price": 39.99,
-    "PictureUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/70bacad1-750f-4e3a-a6f0-e09291d1ecff/M+NP+DF+TIGHT+TOP+LS.png",
-    "Type": "T-Shirts",
-    "Brand": "Nike",
-    "QuantityInStock": 45
-  },
-  {
-    "Name": "Adidas ZNE Full-Zip Hoodie",
-    "Description": "Modern and comfortable hoodie designed for focus and warmth.",
-    "Price": 79.99,
-    "PictureUrl": "https://www.thespot.ba/media/opti_image/webp/catalog/product/cache/3ac2c2ca810e0f6b8d2e5f73140327fa/1/7/1724911661JE7538.webp",
-    "Type": "Hoodies",
-    "Brand": "Adidas",
-    "QuantityInStock": 35
-  },
-  {
-    "Name": "Puma Essentials Logo T-Shirt",
-    "Description": "Simple and stylish T-shirt with the Puma logo for a casual look.",
-    "Price": 29.99,
-    "PictureUrl": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_450,h_450/global/586667/51/fnd/IND/fmt/png/Essentials-Men's-Logo-T-Shirt",
-    "Type": "T-Shirts",
-    "Brand": "Puma",
-    "QuantityInStock": 60
-  },
-  {
-    "Name": "The North Face Resolve 2 Jacket",
-    "Description": "Waterproof and breathable jacket designed for rainy conditions.",
-    "Price": 119.99,
-    "PictureUrl": "https://images.thenorthface.com/is/image/TheNorthFace/NF0A2VCU_JK3_altfront?wid=1300&hei=1510&fmt=jpeg&qlt=50&resMode=sharp",
-    "Type": "Jackets",
-    "Brand": "The North Face",
-    "QuantityInStock": 25
-  },
-  {
-    "Name": "Nike Tech Fleece Jacket",
-    "Description": "Innovative fleece jacket offering warmth without extra weight.",
-    "Price": 129.99,
-    "PictureUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwfd9e3b7d/nk/2a6/1/0/b/b/6/2a610bb6_4907_4f51_ace6_6b1d493b941f.jpg?sw=700&sh=700&sm=fit&q=100&strip=false",
-    "Type": "Jackets",
-    "Brand": "Nike",
-    "QuantityInStock": 30
-  },
-  {
-    "Name": "Adidas Own The Run Jacket",
-    "Description": "Lightweight and water-repellent jacket for outdoor running.",
+    "Name": "Red Dead Redemption 2 (Ultimate Edition)" ,
+    "Description": "An expansive and immersive Western epic.",
     "Price": 99.99,
-    "PictureUrl": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/237f0ce36bb54a79b372c6a02e34f99c_9366/Own_the_Run_Jacket_Black_IN1483_21_model.jpg",
-    "Type": "Jackets",
-    "Brand": "Adidas",
-    "QuantityInStock": 40
+    "PictureUrl": "https://cdn.mobygames.com/d5460ab2-abf5-11ed-8a97-02420a00012d.webp",
+    "Type": "Action-Adventure",
+    "Brand": "Rockstar Games",
+    "QuantityInStock": 25,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Grand Theft Auto V",
+    "Description": "A sprawling open-world crime saga.",
+    "Price": 29.99,
+    "PictureUrl": "https://cdn.mobygames.com/covers/6090098-grand-theft-auto-v-playstation-3-front-cover.jpg",
+    "Type": "Action-Adventure",
+    "Brand": "Rockstar Games",
+    "QuantityInStock": 30,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Grand Theft Auto V",
+    "Description": "A sprawling open-world crime saga.",
+    "Price": 15.99,
+    "PictureUrl": "https://www.giantbomb.com/a/uploads/original/0/3699/2463980-grand%20theft%20auto%20v.jpg",
+    "Type": "Action-Adventure",
+    "Brand": "Rockstar Games",
+    "QuantityInStock": 30,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Grand Theft Auto V",
+    "Description": "A sprawling open-world crime saga.",
+    "Price": 24.99,
+    "PictureUrl": "https://i.ebayimg.com/images/g/D-YAAOSwcZdmnY0C/s-l1200.jpg",
+    "Type": "Action-Adventure",
+    "Brand": "Rockstar Games",
+    "QuantityInStock": 30,
+    "PlatformType": 2
+  },
+  {
+    "Name": "Marvel's Spider-Man",
+    "Description": "Swing through New York City as the friendly neighborhood Spider-Man.",
+    "Price": 24.99,
+    "PictureUrl": "https://cdn.mobygames.com/cc29adf4-abf4-11ed-927d-02420a00012f.webp",
+    "Type": "Action-Adventure",
+    "Brand": "Sony Interactive Entertainment",
+    "QuantityInStock": 22,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Marvel's Spider-Man: Game of the Year Edition ",
+    "Description": "Swing through New York City as the friendly neighborhood Spider-Man.",
+    "Price": 59.99,
+    "PictureUrl": "https://cdn.mobygames.com/822ed0a6-2373-11ef-955c-02420a00018c.webp",
+    "Type": "Action-Adventure",
+    "Brand": "Sony Interactive Entertainment",
+    "QuantityInStock": 22,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Elden Ring",
+    "Description": "A vast and challenging action RPG in a dark fantasy world.",
+    "Price": 50.99,
+    "PictureUrl": "https://cdn.mobygames.com/9a736412-ac12-11ed-b013-02420a00012e.webp",
+    "Type": "Action-Adventure",
+    "Brand": "FromSoftware",
+    "QuantityInStock": 17,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Assassin's Creed Valhalla",
+    "Description": "Lead Viking raids across England in this historical action RPG.",
+    "Price": 14.99,
+    "PictureUrl": "https://i.redd.it/gix30ttllzv41.jpg",
+    "Type": "Action-Adventure",
+    "Brand": "Ubisoft",
+    "QuantityInStock": 23,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Cyberpunk 2077: Phantom Liberty",
+    "Description": "A futuristic open-world RPG in Night City.",
+    "Price": 24.99,
+    "PictureUrl": "https://cdn.mobygames.com/60e9c390-5c38-11ee-9b5d-02420a0001d2.webp",
+    "Type": "Action-Adventure",
+    "Brand": "CD Projekt Red",
+    "QuantityInStock": 28,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Horizon Forbidden West",
+    "Description": "Explore a post-apocalyptic world filled with robotic creatures.",
+    "Price": 39.99,
+    "PictureUrl": "https://cdn.mobygames.com/9b6e3b00-ac10-11ed-b950-02420a00012d.webp",
+    "Type": "Action-Adventure",
+    "Brand": "Sony Interactive Entertainment",
+    "QuantityInStock": 19,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Call of Duty: Modern Warfare",
+    "Description": "Intense and realistic first-person shooter action.",
+    "Price": 59.99,
+    "PictureUrl": "https://cdn.mobygames.com/9ce33808-959f-11ef-b6ef-02420a00013f.webp",
+    "Type": "Shooter",
+    "Brand": "Activision",
+    "QuantityInStock": 26,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Call of Duty: Modern Warfare",
+    "Description": "Intense and realistic first-person shooter action.",
+    "Price": 59.99,
+    "PictureUrl": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2000950/capsule_616x353.jpg?t=1678294805",
+    "Type": "Shooter",
+    "Brand": "Activision",
+    "QuantityInStock": 26,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Halo: Infinite - Campaign",
+    "Description": "The next chapter in the legendary Halo saga.",
+    "Price": 47.99,
+    "PictureUrl": "https://cdn.mobygames.com/1eea95be-ac16-11ed-98b0-02420a000130.webp",
+    "Type": "Shooter",
+    "Brand": "Xbox Game Studios",
+    "QuantityInStock": 21,
+    "PlatformType": 2
+  },
+  {
+    "Name": "Doom Eternal",
+    "Description": "Fast-paced and brutal demon-slaying action.",
+    "Price": 39.99,
+    "PictureUrl": "https://cdn.mobygames.com/a323a926-ac00-11ed-9fde-02420a000132.webp",
+    "Type": "Shooter",
+    "Brand": "Bethesda Softworks",
+    "QuantityInStock": 24,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Doom Eternal",
+    "Description": "Fast-paced and brutal demon-slaying action.",
+    "Price": 31.99,
+    "PictureUrl": "https://m.media-amazon.com/images/I/81DHDcyyQqL.jpg",
+    "Type": "Shooter",
+    "Brand": "Bethesda Softworks",
+    "QuantityInStock": 24,
+    "PlatformType": 2
+  },
+  {
+    "Name": "Overwatch (Origins Edition)",
+    "Description": "A team-based multiplayer hero shooter.",
+    "Price": 40.99,
+    "PictureUrl": "https://cdn.mobygames.com/01c53784-ab7e-11ed-aa5a-02420a0001a0.webp",
+    "Type": "Shooter",
+    "Brand": "Blizzard Entertainment",
+    "QuantityInStock": 27,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Counter-Strike 2",
+    "Description": "A classic and competitive first-person shooter.",
+    "Price": 0.00,
+    "PictureUrl": "https://cdn.mobygames.com/23913e02-5d77-11ee-b38a-02420a0001d4.webp",
+    "Type": "Shooter",
+    "Brand": "Valve Corporation",
+    "QuantityInStock": 35,
+    "PlatformType": 0
+  },
+  {
+    "Name": "FC 25",
+    "Description": "The latest installment in the popular football simulation series.",
+    "Price": 69.99,
+    "PictureUrl": "https://cdn.mobygames.com/357790f2-7cb2-11ef-acad-02420a000117.webp",
+    "Type": "Sport",
+    "Brand": "EA Sports",
+    "QuantityInStock": 20,
+    "PlatformType": 0
+  },
+  {
+    "Name": "FC 25",
+    "Description": "The latest installment in the popular football simulation series.",
+    "Price": 69.99,
+    "PictureUrl": "https://d4n0y8dshd77z.cloudfront.net/listings/62803512/lg/img-1722072296-5d618a6bcd0f.jpg",
+    "Type": "Sport",
+    "Brand": "EA Sports",
+    "QuantityInStock": 20,
+    "PlatformType": 1
+  },
+  {
+    "Name": "NBA 2K25",
+    "Description": "Experience the excitement of professional basketball.",
+    "Price": 69.99,
+    "PictureUrl": "https://images.ctfassets.net/wn7ipiv9ue5v/2BrorCqjF2DOkBBJE6mUJG/53034075cc86595f939ae69dd2d698af/STD-NR.png",
+    "Type": "Sports",
+    "Brand": "2K Sports",
+    "QuantityInStock": 18,
+    "PlatformType": 0
+  },
+  {
+    "Name": "NBA 2K25",
+    "Description": "Experience the excitement of professional basketball.",
+    "Price": 69.99,
+    "PictureUrl": "https://spacenetgameshop.net/image/cache/data/001%20PS4%20PS5%20Cover/nba-2k25-all-star-edition-ps4-ps5-cena-390x600.jpg",
+    "Type": "Sports",
+    "Brand": "2K Sports",
+    "QuantityInStock": 12,
+    "PlatformType": 1
+  },
+  {
+    "Name": "NBA 2K25",
+    "Description": "Experience the excitement of professional basketball.",
+    "Price": 69.99,
+    "PictureUrl": "https://m.media-amazon.com/images/I/71YYLP+rCEL.jpg",
+    "Type": "Sports",
+    "Brand": "2K Sports",
+    "QuantityInStock": 11,
+    "PlatformType": 2
+  },
+  {
+    "Name": "Madden NFL 25",
+    "Description": "American football action at its finest.",
+    "Price": 59.99,
+    "PictureUrl": "https://m.media-amazon.com/images/I/71zh1RJxylL.jpg",
+    "Type": "Sports",
+    "Brand": "EA Sports",
+    "QuantityInStock": 22,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Forza Horizon 5",
+    "Description": "An open-world racing adventure in Mexico.",
+    "Price": 99.99,
+    "PictureUrl": "https://cdn.mobygames.com/1c133084-ac0d-11ed-927d-02420a00012f.webp",
+    "Type": "Racing",
+    "Brand": "Xbox Game Studios",
+    "QuantityInStock": 25,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Forza Horizon 5",
+    "Description": "An open-world racing adventure in Mexico.",
+    "Price": 52.99,
+    "PictureUrl": "https://d4n0y8dshd77z.cloudfront.net/listings/57475968/lg/img-1702891276-f77fe942c9ed.jpg",
+    "Type": "Racing",
+    "Brand": "Xbox Game Studios",
+    "QuantityInStock": 25,
+    "PlatformType": 2
+  },
+  {
+    "Name": "Gran Turismo 7",
+    "Description": "The ultimate driving simulator experience.",
+    "Price": 59.99,
+    "PictureUrl": "https://cdn.mobygames.com/d660ef8a-ac12-11ed-bdca-02420a000133.webp",
+    "Type": "Racing",
+    "Brand": "Sony Interactive Entertainment",
+    "QuantityInStock": 20,
+    "PlatformType": 1
+  },
+  {
+    "Name": "The Witcher 3: Wild Hunt",
+    "Description": "A vast and immersive open-world RPG.",
+    "Price": 39.99,
+    "PictureUrl": "https://cdn.mobygames.com/35d6a050-ab6d-11ed-9b12-02420a00019d.webp",
+    "Type": "RPG",
+    "Brand": "CD Projekt Red",
+    "QuantityInStock": 28,
+    "PlatformType": 1
+  },
+  {
+    "Name": "The Witcher 3: Wild Hunt",
+    "Description": "A vast and immersive open-world RPG.",
+    "Price": 39.99,
+    "PictureUrl": "https://cdn.mobygames.com/97f1cad4-221f-11ee-a636-02420a00012b.webp",
+    "Type": "RPG",
+    "Brand": "CD Projekt Red",
+    "QuantityInStock": 28,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Final Fantasy VII Remake",
+    "Description": "A reimagining of the classic RPG.",
+    "Price": 49.99,
+    "PictureUrl": "https://cdn.mobygames.com/25a8c8b6-ac0d-11ed-9584-02420a000136.webp",
+    "Type": "RPG",
+    "Brand": "Square Enix",
+    "QuantityInStock": 23,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Persona 5 Royal",
+    "Description": "A stylish and captivating JRPG.",
+    "Price": 59.99,
+    "PictureUrl": "https://cdn.mobygames.com/14374c46-ac13-11ed-887e-02420a00012e.webp",
+    "Type": "RPG",
+    "Brand": "Atlus",
+    "QuantityInStock": 21,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Persona 5 Royal",
+    "Description": "A stylish and captivating JRPG.",
+    "Price": 59.99,
+    "PictureUrl": "https://cdn.mobygames.com/7ec8a296-ac16-11ed-aeca-02420a000130.webp",
+    "Type": "RPG",
+    "Brand": "Atlus",
+    "QuantityInStock": 21,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Xenoblade Chronicles 3",
+    "Description": "An epic JRPG adventure on a grand scale.",
+    "Price": 59.99,
+    "PictureUrl": "https://cdn.mobygames.com/c132d7b6-ac14-11ed-927d-02420a00012f.webp",
+    "Type": "RPG",
+    "Brand": "Nintendo",
+    "QuantityInStock": 19,
+    "PlatformType": 3
+  },
+  {
+    "Name": "Mario Kart 8 Deluxe",
+    "Description": "A fun and frantic kart racing experience.",
+    "Price": 49.99,
+    "PictureUrl": "https://cdn.mobygames.com/e63fc990-ac0c-11ed-8a97-02420a00012d.webp",
+    "Type": "Racing",
+    "Brand": "Nintendo",
+    "QuantityInStock": 30,
+    "PlatformType": 3
+  },
+  {
+    "Name": "Minecraft",
+    "Description": "A sandbox game about building and exploring.",
+    "Price": 16.99,
+    "PictureUrl": "https://m.media-amazon.com/images/M/MV5BNjQzMDlkNDctYmE3Yi00ZWFiLTlmOWYtMjI4MzQ4Y2JhZjY2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "Type": "Sandbox",
+    "Brand": "Mojang Studios",
+    "QuantityInStock": 35,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Minecraft",
+    "Description": "A sandbox game about building and exploring.",
+    "Price": 16.99,
+    "PictureUrl": "https://i.ebayimg.com/images/g/9iYAAOSwHzplOkp0/s-l1200.jpg",
+    "Type": "Sandbox",
+    "Brand": "Mojang Studios",
+    "QuantityInStock": 35,
+    "PlatformType": 2
+  },
+  {
+    "Name": "Minecraft",
+    "Description": "A sandbox game about building and exploring.",
+    "Price": 16.99,
+    "PictureUrl": "https://sm.pcmag.com/pcmag_uk/review/m/minecraft-/minecraft-pocket-edition-for-android_reeb.jpg",
+    "Type": "Sandbox",
+    "Brand": "Mojang Studios",
+    "QuantityInStock": 35,
+    "PlatformType": 4
+  },
+  {
+    "Name": "Among Us",
+    "Description": "A social deduction game of teamwork and betrayal.",
+    "Price": 4.99,
+    "PictureUrl": "https://cdn.mobygames.com/e18e1cd6-ac06-11ed-a484-02420a000130.webp",
+    "Type": "Social Deduction",
+    "Brand": "Innersloth",
+    "QuantityInStock": 40,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Among Us",
+    "Description": "A social deduction game of teamwork and betrayal.",
+    "Price": 4.99,
+    "PictureUrl": "https://m.media-amazon.com/images/I/61Yh36uZevL._AC_UF1000,1000_QL80_.jpg",
+    "Type": "Social Deduction",
+    "Brand": "Innersloth",
+    "QuantityInStock": 40,
+    "PlatformType": 2
+  },
+  {
+    "Name": "Among Us",
+    "Description": "A social deduction game of teamwork and betrayal.",
+    "Price": 4.99,
+    "PictureUrl": "https://static.wikia.nocookie.net/among-us-wiki/images/9/9f/PlayStation_4_edition_box_art.png/revision/latest?cb=20220104235056",
+    "Type": "Social Deduction",
+    "Brand": "Innersloth",
+    "QuantityInStock": 40,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Animal Crossing: New Horizons",
+    "Description": "A relaxing life simulation on a deserted island.",
+    "Price": 43.99,
+    "PictureUrl": "https://cdn.mobygames.com/ed563b4e-ab88-11ed-8b70-02420a00019a.webp",
+    "Type": "Life Simulation",
+    "Brand": "Nintendo",
+    "QuantityInStock": 24,
+    "PlatformType": 3
+  },
+  {
+    "Name": "Super Mario Odyssey",
+    "Description": "A whimsical 3D platformer with a hat-tossing adventure.",
+    "Price": 49.99,
+    "PictureUrl": "https://cdn.mobygames.com/7470774c-ac0c-11ed-897b-02420a00012d.webp",
+    "Type": "Platformer",
+    "Brand": "Nintendo",
+    "QuantityInStock": 27,
+    "PlatformType": 3
+  },
+  {
+    "Name": "Death Stranding",
+    "Description": "A unique and atmospheric action game.",
+    "Price": 0.00,
+    "PictureUrl": "https://cdn.mobygames.com/db74957a-ac13-11ed-a631-02420a000135.webp",
+    "Type": "Action",
+    "Brand": "Kojima Productions",
+    "QuantityInStock": 22,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Sekiro: Shadows Die Twice",
+    "Description": "A challenging action-adventure game with a samurai theme.",
+    "Price": 59.99,
+    "PictureUrl": "https://cdn.mobygames.com/ae6e3b04-abf9-11ed-a484-02420a000130.webp",
+    "Type": "Action-Adventure",
+    "Brand": "FromSoftware",
+    "QuantityInStock": 25,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Sekiro: Shadows Die Twice",
+    "Description": "A challenging action-adventure game with a samurai theme.",
+    "Price": 59.99,
+    "PictureUrl": "https://cdn.mobygames.com/covers/6251820-sekiro-shadows-die-twice-xbox-one-front-cover.jpg",
+    "Type": "Action-Adventure",
+    "Brand": "FromSoftware",
+    "QuantityInStock": 25,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Resident Evil Village",
+    "Description": "A horror-filled adventure in a gothic village.",
+    "Price": 39.99,
+    "PictureUrl": "https://cdn.mobygames.com/2ad3e818-ac0b-11ed-941d-02420a000132.webp",
+    "Type": "Horror",
+    "Brand": "Capcom",
+    "QuantityInStock": 20,
+    "PlatformType": 1
+  },
+  {
+    "Name": "It Takes Two",
+    "Description": "A co-op adventure filled with creative gameplay.",
+    "Price": 39.99,
+    "PictureUrl": "https://cdn.mobygames.com/afd10f02-ac0e-11ed-8ce3-02420a000131.webp",
+    "Type": "Adventure",
+    "Brand": "Hazelight Studios",
+    "QuantityInStock": 28,
+    "PlatformType": 1
+  },
+  {
+    "Name": "It Takes Two",
+    "Description": "A co-op adventure filled with creative gameplay.",
+    "Price": 39.99,
+    "PictureUrl": "https://microless.com/cdn/products/f95556f07034551aef84ce1012e4c457-hi.jpg",
+    "Type": "Adventure",
+    "Brand": "Hazelight Studios",
+    "QuantityInStock": 28,
+    "PlatformType": 3
+  },
+  {
+    "Name": "Disco Elysium",
+    "Description": "A revolutionary detective RPG with a unique skill system.",
+    "Price": 39.99,
+    "PictureUrl": "https://cdn.mobygames.com/3200fc5c-abfc-11ed-927d-02420a00012f.webp",
+    "Type": "RPG",
+    "Brand": "ZA/UM",
+    "QuantityInStock": 23,
+    "PlatformType": 3
+  },
+  {
+    "Name": "Little Nightmares 2",
+    "Description": "A suspenseful platformer with a dark and unsettling atmosphere.",
+    "Price": 29.99,
+    "PictureUrl": "https://cdn.mobygames.com/6ff9f24a-ac09-11ed-a7ec-02420a000134.webp",
+    "Type": "Platformer",
+    "Brand": "Tarsier Studios",
+    "QuantityInStock": 26,
+    "PlatformType": 0
+  },
+  {
+    "Name": "Control",
+    "Description": "A supernatural action-adventure game with telekinetic powers.",
+    "Price": 23.99,
+    "PictureUrl": "https://cdn.mobygames.com/f1152f4e-abf9-11ed-bdca-02420a000133.webp",
+    "Type": "Action-Adventure",
+    "Brand": "Remedy Entertainment",
+    "QuantityInStock": 21,
+    "PlatformType": 1
+  },
+  {
+    "Name": "Genshin Impact",
+    "Description": "An open-world action RPG with stunning visuals and deep combat mechanics.",
+    "Price": 0.00,
+    "PictureUrl": "https://cdn.mobygames.com/31dc8756-ac05-11ed-ac61-02420a00012e.webp",
+    "Type": "Action-RPG",
+    "Brand": "miHoYo",
+    "QuantityInStock": 100,
+    "PlatformType": 4
+  },
+  {
+    "Name": "Call of Duty: Mobile",
+    "Description": "A high-quality FPS experience on mobile with multiple game modes.",
+    "Price": 0.00,
+    "PictureUrl": "https://cdn.mobygames.com/ab8a4434-abfc-11ed-aca6-02420a000132.webp",
+    "Type": "Shooter",
+    "Brand": "Activision",
+    "QuantityInStock": 100,
+    "PlatformType": 4
+  },
+  {
+    "Name": "PUBG Mobile",
+    "Description": "A battle royale game featuring intense multiplayer action.",
+    "Price": 0.00,
+    "PictureUrl": "https://cdn.mobygames.com/10905c62-ab7e-11ed-98cd-02420a00019e.webp",
+    "Type": "Battle Royale",
+    "Brand": "Tencent Games",
+    "QuantityInStock": 100,
+    "PlatformType": 4
+  },
+  {
+    "Name": "Clash Royale",
+    "Description": "A real-time strategy card game with tower defense mechanics.",
+    "Price": 0.00,
+    "PictureUrl": "https://cdn.mobygames.com/ec9320e8-abf9-11ed-a7ec-02420a000134.webp",
+    "Type": "Strategy",
+    "Brand": "Supercell",
+    "QuantityInStock": 100,
+    "PlatformType": 4
+  },
+  {
+    "Name": "Stardew Valley",
+    "Description": "A relaxing farming RPG with deep mechanics.",
+    "Price": 7.99,
+    "PictureUrl": "https://cdn.mobygames.com/f26485f6-ab78-11ed-91fb-02420a00019f.webp",
+    "Type": "Simulation",
+    "Brand": "ConcernedApe",
+    "QuantityInStock": 30,
+    "PlatformType": 4
+  },
+  {
+    "Name": "Brawl Stars",
+    "Description": "A fast-paced multiplayer brawler with various game modes.",
+    "Price": 0.00,
+    "PictureUrl": "https://cdn.mobygames.com/f8d476a2-abec-11ed-a9f3-02420a00013a.webp",
+    "Type": "Action",
+    "Brand": "Supercell",
+    "QuantityInStock": 100,
+    "PlatformType": 4
+  },
+  {
+    "Name": "Monument Valley",
+    "Description": "A beautiful puzzle game with stunning visuals and unique mechanics.",
+    "Price": 3.99,
+    "PictureUrl": "https://cdn.mobygames.com/bb557266-ab6c-11ed-a5ec-02420a00019b.webp",
+    "Type": "Puzzle",
+    "Brand": "ustwo games",
+    "QuantityInStock": 40,
+    "PlatformType": 4
+  },
+  {
+    "Name": "Hearthstone: Heroes of Warcraft",
+    "Description": "A digital collectible card game set in the Warcraft universe.",
+    "Price": 0.00,
+    "PictureUrl": "https://cdn.mobygames.com/f504cd46-abf2-11ed-a710-02420a000136.webp",
+    "Type": "Card Game",
+    "Brand": "Blizzard Entertainment",
+    "QuantityInStock": 100,
+    "PlatformType": 4
   }
 ]

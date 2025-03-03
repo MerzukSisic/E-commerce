@@ -12,6 +12,7 @@ import {ShopParams} from '../../shared/models/shopParams';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {Pagination} from '../../shared/models/pagination';
 import {FormsModule} from '@angular/forms';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-shop',
@@ -34,6 +35,7 @@ import {FormsModule} from '@angular/forms';
 export class ShopComponent implements OnInit {
   private shopService = inject(ShopService);
   private dialogService = inject(MatDialog);
+  private route = inject(ActivatedRoute);
   products?: Pagination<Product>;
   sortOptions = [
     {name: 'Alphabetical', value: 'name'},
@@ -44,6 +46,13 @@ export class ShopComponent implements OnInit {
   pageSizeOptions = [5,10,15,20];
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.shopParams = new ShopParams();
+      if (params['platform']) {
+        this.shopParams.platform = params['platform'];
+      }
+      this.getProducts();
+    });
     this.initializeShop();
   }
 
@@ -52,6 +61,7 @@ export class ShopComponent implements OnInit {
     this.shopService.getTypes();
     this.getProducts();
   }
+
 
   getProducts() {
     this.shopService.getProducts(this.shopParams).subscribe({

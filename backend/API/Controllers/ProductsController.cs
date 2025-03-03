@@ -83,7 +83,14 @@ public class ProductsController(IUnitOfWork unit) : BaseApiController
         var spec = new TypeListSpec();
         return Ok(await unit.Repository<Product>().ListAysnc(spec));
     }
-
+    
+    [HttpGet("platforms")]
+    public ActionResult<IReadOnlyList<string>> GetPlatforms()
+    {
+        var platforms = Enum.GetNames(typeof(Platform)).ToList();
+        return Ok(platforms);
+    }
+    
     private bool ProductExists(int id)
     {
         return unit.Repository<Product>().Exists(id);

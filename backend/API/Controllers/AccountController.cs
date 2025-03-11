@@ -45,7 +45,6 @@ public class AccountController(SignInManager<AppUser> signInManager) : BaseApiCo
     }
 
 
-    [Authorize]
     [HttpGet("user-info")]
     public async Task<ActionResult> GetUserInfo()
     {

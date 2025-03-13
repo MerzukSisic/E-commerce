@@ -4,7 +4,7 @@
       <div class="flex justify-between items-center align-middle">
         <h2 class="text-3xl text-center font-bold text-gray-800">Order Summary</h2>
         <p class="text-center text-gray-600 mt-2">Order <strong>#{{ order.id }}</strong></p>
-        <button mat-stroked-button routerLink="/orders">Return to orders</button>
+        <button mat-stroked-button (click)="onReturnClick()">{{buttonText}}</button>
       </div>
       <div class="mt-8 py-6 border-t border-gray-300 grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="space-y-4">

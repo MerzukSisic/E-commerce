@@ -12,14 +12,13 @@ export class AdminService {
   baseUrl = environment.apiUrl;
   private http = inject(HttpClient)
 
-  getOrders(orderParams: OrderParams) {
+  getOrders(orderParams: OrderParams) {  
     let params = new HttpParams();
-    if (orderParams.filter && orderParams.filter !== 'All') {
-      params = params.append('filter', orderParams.filter);
-    }
+    if (orderParams.filter && orderParams.filter !== 'All')
+      params = params.append('status', orderParams.filter);
     params = params.append('pageIndex', orderParams.pageNumber);
     params = params.append('pageSize', orderParams.pageSize);
-    return this.http.get<Pagination<Order[]>>(this.baseUrl + 'admin/orders' + {params});
+    return this.http.get<Pagination<Order>>(this.baseUrl + 'admin/orders', {params});
   }
 
   getOrder(id: number) {

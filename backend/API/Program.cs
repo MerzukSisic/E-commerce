@@ -43,6 +43,7 @@ builder.Services.AddIdentityApiEndpoints<AppUser>()
 
 
 builder.Services.AddScoped<IPaymentService, PaymentService>();
+builder.Services.AddScoped<ICouponService, CouponService>();
 builder.Services.AddSignalR();
 
 var app = builder.Build();

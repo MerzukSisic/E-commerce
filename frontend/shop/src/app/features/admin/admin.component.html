@@ -57,7 +57,7 @@
                                 <mat-icon color="accent">visibility</mat-icon>
                               </button>
 
-                              <button matTooltip="refund" mat-icon-button >
+                              <button matTooltip="refund" mat-icon-button  (click)="openConfirmDialog(order.id)" [disabled]="order.status==='Refunded'">
 
                                 <mat-icon color="warn">undo</mat-icon>
                               </button>

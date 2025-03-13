@@ -12,6 +12,7 @@ import { CurrencyPipe, DatePipe } from '@angular/common';
 import { MatTooltip, MatTooltipModule } from '@angular/material/tooltip';
 import {MatTabsModule} from '@angular/material/tabs';
 import { RouterLink } from '@angular/router';
+import { DialogService } from '../../core/services/dialog.service';
 
 
 @Component({
@@ -39,6 +40,7 @@ export class AdminComponent implements  OnInit {
 
   private adminService=inject(AdminService);
   orderParams=new OrderParams;
+  dialogService=inject(DialogService);
   totalItems=0;
 
   statusOptions=['All', 'PaymentReceived', 'PaymentMismatch', 'Refunded', 'Pending'];
@@ -78,4 +80,26 @@ export class AdminComponent implements  OnInit {
     this.loadOrders();
   }
 
+
+  async openConfirmDialog(id: number){
+    const confirmed=await this.dialogService.confirm(
+
+      'Confirm refund',
+      'Are you sure you want to issue this refund? This cannot be undone'
+    )
+
+    if(confirmed)
+    {
+      this.refundOrder(id);
+    }
+  }
+
+  refundOrder(id:number){
+    this.adminService.refundOrder(id).subscribe({
+      next: order=>{
+        this.dataSource.data=this.dataSource.data.map(o=>o.id===id? order: o)
+      }
+    })
+
+  }
 }

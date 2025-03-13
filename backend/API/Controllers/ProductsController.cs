@@ -2,7 +2,6 @@
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
-using Infrastructure.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +11,7 @@ namespace API.Controllers;
 [Route("api/[controller]")]
 public class ProductsController(IUnitOfWork unit) : BaseApiController
 {
+    [Cache(600)]
     [HttpGet]
     public async Task<ActionResult<IReadOnlyList<Product>>> GetProducts(
         [FromQuery] ProductSpecParams specParams)
@@ -21,6 +21,7 @@ public class ProductsController(IUnitOfWork unit) : BaseApiController
         return await CreatePagedResult(unit.Repository<Product>(), spec, specParams.PageIndex, specParams.PageSize);
     }
 
+    [Cache(600)]
     [HttpGet("{id:int}")]
     public async Task<ActionResult<Product>> GetProduct(int id)
     {
@@ -72,6 +73,7 @@ public class ProductsController(IUnitOfWork unit) : BaseApiController
         return BadRequest("Failed to delete product");
     }
 
+    [Cache(10000)]
     [HttpGet("brands")]
     public async Task<ActionResult<IReadOnlyList<string>>> GetBrands()
     {
@@ -79,6 +81,7 @@ public class ProductsController(IUnitOfWork unit) : BaseApiController
         return Ok(await unit.Repository<Product>().ListAysnc(spec));
     }
 
+    [Cache(10000)]
     [HttpGet("types")]
     public async Task<ActionResult<IReadOnlyList<string>>> GetTypes()
     {
@@ -86,6 +89,7 @@ public class ProductsController(IUnitOfWork unit) : BaseApiController
         return Ok(await unit.Repository<Product>().ListAysnc(spec));
     }
     
+    [Cache(10000)]
     [HttpGet("platforms")]
     public ActionResult<IReadOnlyList<string>> GetPlatforms()
     {

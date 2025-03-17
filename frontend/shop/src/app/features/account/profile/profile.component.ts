@@ -7,7 +7,7 @@ import {UserDashboard} from '../../../shared/models/Dashboard';
 import {SnackbarService} from '../../../core/services/snackbar.service';
 import {MatIcon} from '@angular/material/icon';
 import {AddressPipe} from '../../../shared/pipes/address.pipe';
-import {CurrencyPipe} from '@angular/common';
+import {CurrencyPipe, NgIf} from '@angular/common';
 import {MatButton} from '@angular/material/button';
 import {Chart, ChartOptions, registerables} from 'chart.js';
 
@@ -18,7 +18,8 @@ import {Chart, ChartOptions, registerables} from 'chart.js';
     AddressPipe,
     CurrencyPipe,
     MatButton,
-    RouterLink
+    RouterLink,
+    NgIf
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss'
@@ -32,6 +33,7 @@ export class ProfileComponent implements OnInit {
 
   loading = true;
   dashboardData?: UserDashboard;
+  emailConfirmed = computed(() => this.accountService.currentUser()?.emailConfirmed ?? false);
   currentUser = computed(() => this.accountService.currentUser());
   mostBoughtPlatform: string = '';
   chart?: Chart;
@@ -136,4 +138,21 @@ export class ProfileComponent implements OnInit {
     console.log("Chart created!");
     this.snack.success("Chart successfully generated!");
   }
+
+  confirmEmail(): void {
+    const email = this.currentUser()?.email;
+    if (!email) {
+      this.snack.error('Email nije dostupan!');
+      return;
+    }
+    this.accountService.resendConfirmationEmail({email}).subscribe({
+      next: () =>
+        this.snack.success('Potvrđujući e-mail poslat. Proverite inbox.'),
+      error: (err) => {
+        console.error(err);
+        this.snack.error('Greška prilikom slanja e-maila.');
+      },
+    });
+  }
+
 }

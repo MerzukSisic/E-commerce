@@ -1,0 +1,21 @@
+<div class="min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-lg shadow-lg text-center w-full max-w-md">
+    <mat-icon class="text-purple-600  mb-4">
+      {{ confirming ? 'hourglass_top' : success ? 'check_circle' : 'error' }}
+    </mat-icon>
+
+    <h2 class="text-xl font-semibold text-gray-900">
+      {{ confirming ? 'Confirming your email...' : success ? 'Email Confirmed!' : 'Error Confirming Email' }}
+    </h2>
+
+    <p class="text-gray-700 mt-2">
+      {{ confirming ? 'Please wait while we verify your email.' :
+      success ? 'Your email has been successfully verified. You can now log in.' :
+        'There was an issue verifying your email. Please try again.' }}
+    </p>
+
+    <button *ngIf="!confirming" mat-flat-button color="primary" routerLink="/account/profile" class="mt-4">
+      Go to Login
+    </button>
+  </div>
+</div>

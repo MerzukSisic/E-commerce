@@ -64,4 +64,12 @@ export class AccountService {
     return this.http.get<{ isAuthenticated: boolean }>(this.baseUrl + 'account/auth-status');
   }
 
+  confirmEmail(data: { email: string, token: string }) {
+    return this.http.post(this.baseUrl + 'account/confirm-email', data);
+  }
+
+  resendConfirmationEmail(data: { email: string }) {
+    return this.http.post(this.baseUrl + 'account/resend-confirmation', data);
+  }
+
 }

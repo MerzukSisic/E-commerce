@@ -20,7 +20,6 @@ import { DialogService } from '../../core/services/dialog.service';
   imports: [
      MatTableModule,
      MatPaginatorModule,
-     MatButton,
      MatIcon,
      MatSelectModule,
      DatePipe,
@@ -34,7 +33,7 @@ import { DialogService } from '../../core/services/dialog.service';
   styleUrl: './admin.component.scss'
 })
 export class AdminComponent implements  OnInit {
-  
+
   displayedColumns: string[] = ['id', 'buyerEmail', 'orderDate', 'total', 'status', 'action'];
   dataSource = new MatTableDataSource<Order>([]);
 

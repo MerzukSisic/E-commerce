@@ -15,7 +15,6 @@ import { AdminService } from '../../../core/services/admin.service';
   imports: [
     MatCard,
     MatButton,
-    RouterLink,
     AddressPipe,
     CurrencyPipe,
     DatePipe,
@@ -30,7 +29,7 @@ export class OrderDetailedComponent implements OnInit {
   private accountService=inject(AccountService);
   private adminService=inject(AdminService);
   private router=inject(Router);
-  
+
   order?: Order;
   buttonText=this.accountService.isAdmin() ? 'Return to admin' : 'Return to orders'
 
@@ -41,7 +40,7 @@ export class OrderDetailedComponent implements OnInit {
 
   onReturnClick()
   {
-    this.accountService.isAdmin() ? 
+    this.accountService.isAdmin() ?
     this.router.navigateByUrl('/admin')
     : this.router.navigateByUrl('/orders');
   }
@@ -50,7 +49,7 @@ export class OrderDetailedComponent implements OnInit {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if(!id) return;
 
-    const loadOrderData=this.accountService.isAdmin()? 
+    const loadOrderData=this.accountService.isAdmin()?
     this.adminService.getOrder(+id)
     : this.orderService.getOrderDetailed(+id);
 

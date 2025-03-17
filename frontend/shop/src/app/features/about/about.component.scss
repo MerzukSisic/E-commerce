@@ -1,0 +1,74 @@
+#about-section {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  #about-section h2 {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  #about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  #map-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+  }
+  
+  #map {
+    width: 500px;
+    height: 500px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: 5px solid black;
+  }
+  
+  #route-info {
+    width: 300px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #route-info h3 {
+    margin-top: 0;
+  }
+  
+  #route-info p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  
+  #button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  button {
+    font-size: 16px;
+  }
+  
+  /* Hide route instructions */
+  .leaflet-routing-container,
+  .leaflet-routing-alt,
+  .leaflet-routing-instruction-text {
+    display: none !important;
+  }
+  

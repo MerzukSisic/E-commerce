@@ -7,4 +7,5 @@ export class ShopParams {
   search = '';
   minPrice?: number;
   maxPrice?: number;
+  platform?: string;
 }

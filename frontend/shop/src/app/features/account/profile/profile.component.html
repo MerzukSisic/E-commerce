@@ -1,0 +1,93 @@
+<div class="min-h-screen text-gray-900 p-6 flex justify-center">
+  <div class="container mx-auto bg-white p-8 rounded-lg shadow-lg border border-gray-300">
+
+    <!-- Main Content -->
+    <div class="w-full space-y-6">
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-4 border border-purple-600 text-purple-700 rounded-lg shadow-md bg-white flex items-center justify-center gap-x-6">
+          <mat-icon style="font-size: 36px; width: 36px; height: 36px;">sports_esports</mat-icon>
+          <div>
+            <p class="text-sm text-gray-600">Total games purchased</p>
+            <p class="text-lg font-bold text-purple-700">{{ dashboardData?.totalGamesBought }}</p>
+          </div>
+        </div>
+
+        <div class="p-4 border border-purple-600 text-purple-700 rounded-lg shadow-md bg-white flex items-center justify-center gap-x-6">
+          <mat-icon style="font-size: 36px; width: 36px; height: 36px;">shopping_cart</mat-icon>
+          <div>
+            <p class="text-sm text-gray-600">Total purchases</p>
+            <p class="text-lg font-bold text-purple-700">{{ dashboardData?.totalOrders }}</p>
+          </div>
+        </div>
+
+        <div class="p-4 border border-purple-600 text-purple-700 rounded-lg shadow-md bg-white flex items-center justify-center gap-x-6">
+          <mat-icon style="font-size: 36px; width: 36px; height: 36px;">attach_money</mat-icon>
+          <div>
+            <p class="text-sm text-gray-600">Total money spent</p>
+            <p class="text-lg font-bold text-purple-700">{{ dashboardData?.totalSpent | currency }}</p>
+          </div>
+        </div>
+
+        <div class="p-4 border border-purple-600 text-purple-700 rounded-lg shadow-md bg-white flex items-center justify-center gap-x-6">
+          <mat-icon style="font-size: 36px; width: 36px; height: 36px;">devices</mat-icon>
+          <div>
+            <p class="text-sm text-gray-600">Most frequently used platform</p>
+            <p class="text-lg font-bold text-purple-700">{{ mostBoughtPlatform }}</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Account Details -->
+      <div
+        class="p-6 bg-white border border-gray-300 rounded-lg shadow-md grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div>
+          <h3 class="text-xl font-semibold mb-6 text-purple-700">Account data</h3>
+          <p class="mb-4 flex items-center text-gray-700">
+            <mat-icon class="mr-2 text-purple-600">person</mat-icon>
+            <strong class="mr-2">Name:</strong>
+            <span>{{ currentUser()?.firstName }} {{ currentUser()?.lastName }}</span>
+          </p>
+          <p class="mb-4 flex items-center text-gray-700">
+            <mat-icon class="mr-2 text-purple-600">email</mat-icon>
+            <strong class="mr-2">Email Address:</strong>
+            <span>{{ currentUser()?.email }}</span>
+            <span *ngIf="currentUser()?.emailConfirmed" class="ml-2 text-green-400">✔</span>
+          </p>
+          <p class="mb-4 flex items-center text-gray-700">
+            <mat-icon class="mr-2 text-purple-600">home</mat-icon>
+            <strong class="mr-2">Delivery Address:</strong>
+            <span>{{ currentUser()?.address | address }}</span>
+          </p>
+        </div>
+
+        <div class="flex flex-col space-y-6 items-start">
+          <div>
+            <button *ngIf="!currentUser()?.emailConfirmed" (click)="confirmEmail()" mat-flat-button color="primary">
+              <mat-icon class="mr-2">check_circle</mat-icon>
+              Confirm email
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-6 bg-white border border-gray-300 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-4 text-purple-700">Games purchased per platform</h3>
+        <div class="relative w-full h-64">
+          <canvas id="platformSalesChart"></canvas>
+        </div>
+      </div>
+
+
+      <div class="flex justify-center mt-6">
+        <button mat-flat-button color="primary" routerLink="/shop">
+          <mat-icon class="mr-2">storefront</mat-icon>
+          Back to Shop
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

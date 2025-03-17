@@ -19,6 +19,7 @@ import {AdminComponent} from './features/admin/admin.component';
 import {adminGuard} from './core/guards/admin.guard';
 import {ProfileComponent} from './features/account/profile/profile.component';
 import { AboutComponent } from './features/about/about.component';
+import {ConfirmEmailComponent} from './features/account/confirm-email/confirm-email.component';
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -33,12 +34,13 @@ export const routes: Routes = [
   {path: 'account/login', component: LoginComponent},
   {path: 'account/register', component: RegisterComponent},
   {path: 'account/profile', component: ProfileComponent, canActivate: [authGuard]},
+  {path: 'confirm-email', component: ConfirmEmailComponent, canActivate: [authGuard]},
   {path: 'test-error', component: TestErrorComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: 'server-error', component: ServerErrorComponent},
   {path: 'admin', component: AdminComponent, canActivate: [authGuard, adminGuard]},
   {path: 'about', component: AboutComponent},
   {path: '**', redirectTo: 'not-found', pathMatch: 'full'},
-  
+
 ];
 

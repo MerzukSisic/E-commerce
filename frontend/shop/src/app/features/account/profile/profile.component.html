@@ -54,7 +54,7 @@
             <mat-icon class="mr-2 text-purple-600">email</mat-icon>
             <strong class="mr-2">Email Address:</strong>
             <span>{{ currentUser()?.email }}</span>
-            <span class="ml-2 text-green-400">✔</span>
+            <span *ngIf="currentUser()?.emailConfirmed" class="ml-2 text-green-400">✔</span>
           </p>
           <p class="mb-4 flex items-center text-gray-700">
             <mat-icon class="mr-2 text-purple-600">home</mat-icon>
@@ -65,7 +65,7 @@
 
         <div class="flex flex-col space-y-6 items-start">
           <div>
-            <button mat-flat-button color="primary">
+            <button *ngIf="!currentUser()?.emailConfirmed" (click)="confirmEmail()" mat-flat-button color="primary">
               <mat-icon class="mr-2">check_circle</mat-icon>
               Confirm email
             </button>

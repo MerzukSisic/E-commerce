@@ -1,10 +1,12 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {Product} from '../../../shared/models/product';
 import {ShopParams} from '../../../shared/models/shopParams';
 import {ShopService} from '../../../core/services/shop.service';
 import {PageEvent} from '@angular/material/paginator';
 import {CustomTableComponent} from '../../../shared/components/custom-table/custom-table.component';
 import {MatButton} from '@angular/material/button';
+import {MatDialog} from '@angular/material/dialog';
+import {ProductFormComponent} from '../product-form/product-form.component';
 
 @Component({
   selector: 'app-admin-catalog',
@@ -15,9 +17,10 @@ import {MatButton} from '@angular/material/button';
   templateUrl: './admin-catalog.component.html',
   styleUrl: './admin-catalog.component.scss'
 })
-export class AdminCatalogComponent {
+export class AdminCatalogComponent implements OnInit {
   products: Product[] = [];
   private shopService = inject(ShopService);
+  private dialog = inject(MatDialog);
   productParams = new ShopParams();
   totalItems = 0;
 
@@ -79,7 +82,21 @@ export class AdminCatalogComponent {
     this.loadProducts();
   }
 
-
+  openCreateDialog() {
+    const dialog = this.dialog.open(ProductFormComponent, {
+      minWidth: '500px',
+      data: {
+        title: 'Create product'
+      }
+    });
+    dialog.afterClosed().subscribe({
+      next: async result => {
+        if (result) {
+          console.log(result)
+        }
+      }
+    })
+  }
 
 
 }

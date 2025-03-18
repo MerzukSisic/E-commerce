@@ -7,6 +7,10 @@ import {CustomTableComponent} from '../../../shared/components/custom-table/cust
 import {MatButton} from '@angular/material/button';
 import {MatDialog} from '@angular/material/dialog';
 import {ProductFormComponent} from '../product-form/product-form.component';
+import {AdminService} from '../../../core/services/admin.service';
+import {firstValueFrom} from 'rxjs';
+import {DialogService} from '../../../core/services/dialog.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin-catalog',
@@ -21,6 +25,9 @@ export class AdminCatalogComponent implements OnInit {
   products: Product[] = [];
   private shopService = inject(ShopService);
   private dialog = inject(MatDialog);
+  private adminService = inject(AdminService);
+  private dialogService = inject(DialogService);
+  private router = inject(Router);
   productParams = new ShopParams();
   totalItems = 0;
 
@@ -36,11 +43,19 @@ export class AdminCatalogComponent implements OnInit {
 
   actions = [
     {
+      label: 'View',
+      icon: 'visibility',
+      tooltip: 'View product',
+      action: (row: any) => {
+        this.router.navigateByUrl(`/shop/${row.id}`)
+      }
+    },
+    {
       label: 'Edit',
       icon: 'edit',
       tooltip: 'Edit product',
       action: (row: any) => {
-        console.log(row)
+        this.openEditDialog(row)
       }
     },
     {
@@ -48,7 +63,7 @@ export class AdminCatalogComponent implements OnInit {
       icon: 'delete',
       tooltip: 'Delete product',
       action: (row: any) => {
-        console.log(row)
+        this.openConfirmDialog(row.id)
       }
     },
     {
@@ -92,11 +107,50 @@ export class AdminCatalogComponent implements OnInit {
     dialog.afterClosed().subscribe({
       next: async result => {
         if (result) {
-          console.log(result)
+          const product = await firstValueFrom(this.adminService.createProduct(result.product));
+          if (product) {
+            this.products.push(product);
+          }
         }
       }
     })
   }
 
+  openEditDialog(product: Product) {
+    const dialog = this.dialog.open(ProductFormComponent, {
+      minWidth: '500px',
+      data: {
+        title: 'Edit product',
+        product
+      }
+    })
+    dialog.afterClosed().subscribe({
+      next: async result => {
+        if (result) {
+          await firstValueFrom(this.adminService.updateProduct(result.product));
+          const index = this.products.findIndex(p => p.id === result.product.id);
+          if (index !== -1) {
+            this.products[index] = result.product;
+          }
+        }
+      }
+    })
+  }
+
+  async openConfirmDialog(id: number) {
+    const confirmed = await this.dialogService.confirm(
+      'Confirm delete product',
+      'Are you sure you want to delete this product? This cannot be undone'
+    );
+    if (confirmed) this.onDelete(id);
+  }
+
+  onDelete(id: number) {
+    this.adminService.deleteProduct(id).subscribe({
+      next: () => {
+        this.products = this.products.filter(x => x.id !== id);
+      }
+    })
+  }
 
 }

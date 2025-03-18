@@ -37,11 +37,14 @@ export class ProductFormComponent implements OnInit {
   private dialogRef = inject(MatDialogRef<ProductFormComponent>);
 
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.initializeForm();
-    setTimeout(()=>{
+    setTimeout(() => {
       this.loadBrandsAndTypesAndPlatforms();
     })
+    if (this.data.product) {
+      this.productForm.reset(this.data.product)
+    }
   }
 
   initializeForm() {
@@ -58,11 +61,13 @@ export class ProductFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.productForm.invalid) {
+    if (this.productForm.valid) {
       let product: Product = this.productForm.value;
+      if (this.data.product) product.id = this.data.product.id;
       this.dialogRef.close({product});
     }
   }
+
 
   loadBrandsAndTypesAndPlatforms() {
     this.shopService.getTypes();

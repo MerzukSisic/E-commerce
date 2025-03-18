@@ -12,7 +12,7 @@
     <app-select-input label="Platform Type" formControlName="platformType" [options]="shopService.platforms" class="w-full"/>
     <div class="flex justify-end gap-3">
       <button mat-button color="warn" type="button" mat-dialog-close>Cancel</button>
-      <button mat-raised-button color="primary" type="button" [disabled]="productForm.invalid">Submit</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="productForm.invalid">Submit</button>
     </div>
   </form>
 </mat-dialog-content>

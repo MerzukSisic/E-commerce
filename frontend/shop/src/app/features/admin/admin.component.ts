@@ -5,6 +5,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTabsModule} from '@angular/material/tabs';
 import {AdminOrdersComponent} from './admin-orders/admin-orders.component';
+import {AdminCatalogComponent} from './admin-catalog/admin-catalog.component';
 
 
 @Component({
@@ -15,7 +16,8 @@ import {AdminOrdersComponent} from './admin-orders/admin-orders.component';
     MatSelectModule,
     MatTooltipModule,
     MatTabsModule,
-    AdminOrdersComponent
+    AdminOrdersComponent,
+    AdminCatalogComponent
   ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss'

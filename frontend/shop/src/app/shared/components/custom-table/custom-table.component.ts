@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {NgForOf, NgIf} from '@angular/common';
 import {MatIconButton} from '@angular/material/button';

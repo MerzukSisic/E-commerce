@@ -31,9 +31,9 @@ public class ProductsController(IUnitOfWork unit) : BaseApiController
 
         return product;
     }
-    
+
     [InvalidateCache("api/products|")]
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
     [HttpPost]
     public async Task<ActionResult<Product>> CreateProduct(Product product)
     {
@@ -44,9 +44,9 @@ public class ProductsController(IUnitOfWork unit) : BaseApiController
 
         return BadRequest("Failed to add product");
     }
-    
+
     [InvalidateCache("api/products|")]
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
     [HttpPut("{id:int}")]
     public async Task<ActionResult> UpdateProduct(int id, Product product)
     {
@@ -62,7 +62,7 @@ public class ProductsController(IUnitOfWork unit) : BaseApiController
     }
 
     [InvalidateCache("api/products|")]
-    [Authorize(Roles ="Admin")]
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{id:int}")]
     public async Task<ActionResult> DeleteProduct(int id)
     {
@@ -76,6 +76,30 @@ public class ProductsController(IUnitOfWork unit) : BaseApiController
             return NoContent();
 
         return BadRequest("Failed to delete product");
+    }
+
+    [InvalidateCache("api/products|")]
+    [Authorize(Roles = "Admin")]
+    [HttpPut("update-stock/{productId}")]
+    public async Task<ActionResult> UpdateStock(int productId, [FromBody] int newQuantity)
+    {
+        var productItem = await unit.Repository<Product>().GetByIdAsync(productId);
+
+        if (productItem == null)
+        {
+            return NotFound("Product not found");
+        }
+
+        productItem.QuantityInStock = newQuantity;
+
+        unit.Repository<Product>().Update(productItem);
+
+        if (await unit.Complete())
+        {
+            return Ok();
+        }
+
+        return BadRequest("Problem updating stock");
     }
 
     [Cache(10000)]
@@ -93,7 +117,7 @@ public class ProductsController(IUnitOfWork unit) : BaseApiController
         var spec = new TypeListSpec();
         return Ok(await unit.Repository<Product>().ListAysnc(spec));
     }
-    
+
     [Cache(10000)]
     [HttpGet("platforms")]
     public ActionResult<IReadOnlyList<string>> GetPlatforms()
@@ -101,7 +125,7 @@ public class ProductsController(IUnitOfWork unit) : BaseApiController
         var platforms = Enum.GetNames(typeof(Platform)).ToList();
         return Ok(platforms);
     }
-    
+
     private bool ProductExists(int id)
     {
         return unit.Repository<Product>().Exists(id);

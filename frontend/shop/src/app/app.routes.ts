@@ -20,13 +20,14 @@ import {adminGuard} from './core/guards/admin.guard';
 import {ProfileComponent} from './features/account/profile/profile.component';
 import { AboutComponent } from './features/about/about.component';
 import {ConfirmEmailComponent} from './features/account/confirm-email/confirm-email.component';
+import {emailVerificationGuard} from './shared/pipes/email-verification.guard';
 
 export const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'shop', component: ShopComponent},
   {path: 'shop/:id', component: ProductDetailsComponent},
   {path: 'cart', component: CartComponent},
-  {path: 'checkout', component: CheckoutComponent, canActivate: [authGuard,emptyCartGuard]},
+  {path: 'checkout', component: CheckoutComponent, canActivate: [authGuard,emptyCartGuard,emailVerificationGuard]},
   {path: 'checkout/success', component: CheckoutSuccessComponent
     , canActivate: [authGuard, orderCompleteGuard]},
   {path: 'orders', component: OrderComponent, canActivate: [authGuard]},

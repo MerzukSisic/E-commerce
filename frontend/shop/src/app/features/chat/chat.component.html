@@ -1,0 +1,87 @@
+<div class="fixed bottom-4 right-4 z-50">
+  <!-- Floating Button -->
+  <button
+    class="flex items-center justify-center px-5 py-3 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 transition-all text-sm md:text-base font-medium"
+    (click)="toggleSupport()"
+  >
+    <span class="truncate">Customer Support</span>
+  </button>
+
+  <!-- Expandable Chat Box -->
+  <div
+    *ngIf="isExpanded"
+    class="absolute bottom-20 right-0 w-[95%] sm:w-[90%] md:w-[28rem] h-[70vh] md:h-[38rem] bg-white shadow-xl rounded-2xl p-4 border border-gray-300 flex flex-col transition-all duration-300"
+  >
+    <!-- Header -->
+    <div class="flex justify-between items-center border-b pb-2 mb-2">
+      <h3 class="text-lg font-semibold text-gray-900">Customer Support</h3>
+      <button
+        (click)="toggleSupport()"
+        class="text-gray-600 hover:text-gray-900 transition"
+      >
+        ✖
+      </button>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mb-4">
+      <button
+        (click)="toggleFaq()"
+        class="w-full py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition"
+      >
+        {{ showFaq ? 'Hide FAQ' : 'Show FAQ' }}
+      </button>
+
+      <div
+        *ngIf="showFaq"
+        class="mt-2 border border-gray-300 rounded-lg p-3 bg-gray-100 max-h-48 overflow-y-auto"
+      >
+        <h4 class="text-md font-semibold text-gray-800 mb-2">Frequently Asked Questions</h4>
+        <ul class="space-y-2">
+          <li
+            *ngFor="let question of getFaqQuestions()"
+            (click)="sendFaqQuestion(question)"
+            class="cursor-pointer text-purple-600 hover:text-purple-700 transition-all"
+          >
+            {{ question }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Chat Messages -->
+    <div class="flex-1 overflow-y-auto mb-4 space-y-3 p-2 bg-gray-50 rounded-lg">
+      <div
+        *ngFor="let message of chatMessages"
+        [ngClass]="{ 'text-right': message.isUser, 'text-left': !message.isUser }"
+      >
+        <div
+          class="inline-block px-4 py-2 rounded-xl text-sm max-w-[85%] break-words"
+          [ngClass]="{
+            'bg-purple-500 text-white self-end': message.isUser,
+            'bg-gray-200 text-gray-800 self-start': !message.isUser
+          }"
+        >
+          {{ message.text }}
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Input -->
+    <div class="flex flex-col md:flex-row gap-2">
+      <textarea
+        [(ngModel)]="userMessage"
+        placeholder="Type your message..."
+        class="flex-1 p-3 border rounded-lg focus:ring-2 focus:ring-purple-400 bg-white resize-none shadow-sm"
+        rows="2"
+      ></textarea>
+      <button
+        (click)="sendMessage()"
+        class="py-2 px-4 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-all"
+        [disabled]="!userMessage.trim()"
+      >
+        Send
+      </button>
+    </div>
+  </div>
+</div>

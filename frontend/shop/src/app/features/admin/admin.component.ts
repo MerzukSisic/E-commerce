@@ -1,15 +1,13 @@
-import { AfterViewInit, Component, inject, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { Component, inject, OnInit } from '@angular/core';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-
 import { AdminService } from '../../core/services/admin.service';
 import { OrderParams } from '../../shared/models/orderParams';
 import { Order } from '../../shared/models/order';
-import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
-import { MatLabel, MatSelect, MatSelectChange, MatSelectModule } from '@angular/material/select';
+import { MatLabel, MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { CurrencyPipe, DatePipe } from '@angular/common';
-import { MatTooltip, MatTooltipModule } from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatTabsModule} from '@angular/material/tabs';
 import { RouterLink } from '@angular/router';
 import { DialogService } from '../../core/services/dialog.service';
@@ -20,7 +18,6 @@ import { DialogService } from '../../core/services/dialog.service';
   imports: [
      MatTableModule,
      MatPaginatorModule,
-     MatButton,
      MatIcon,
      MatSelectModule,
      DatePipe,
@@ -34,7 +31,7 @@ import { DialogService } from '../../core/services/dialog.service';
   styleUrl: './admin.component.scss'
 })
 export class AdminComponent implements  OnInit {
-  
+
   displayedColumns: string[] = ['id', 'buyerEmail', 'orderDate', 'total', 'status', 'action'];
   dataSource = new MatTableDataSource<Order>([]);
 

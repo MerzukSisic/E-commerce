@@ -2,14 +2,14 @@
 <mat-dialog-content class="p-3">
   <form [formGroup]="productForm" class="p-4 w-full" (ngSubmit)="onSubmit()">
     <app-text-input label="Product name" formControlName="name"/>
-    <app-text-input label="Description" formControlName="description"/>
+    <app-text-area label="Description" formControlName="description"/>
     <app-text-input label="Price" formControlName="price"/>
     <app-text-input label="Picture URL " formControlName="pictureUrl"/>
     <div class="flex justify-between w-full gap-3">
-      <app-text-input label="Type" formControlName="type"/>
-      <app-text-input label="Brand" formControlName="brand"/>
+      <app-select-input label="Type" formControlName="type" [options]="shopService.types" class="w-full" />
+      <app-select-input label="Brand" formControlName="brand" [options]="shopService.brands" class="w-full" />
     </div>
-    <app-text-input label="Platform Type" formControlName="platformType"/>
+    <app-select-input label="Platform Type" formControlName="platformType" [options]="shopService.platforms" class="w-full"/>
     <div class="flex justify-end gap-3">
       <button mat-button color="warn" type="button" mat-dialog-close>Cancel</button>
       <button mat-raised-button color="primary" type="button" [disabled]="productForm.invalid">Submit</button>

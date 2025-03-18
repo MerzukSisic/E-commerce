@@ -12,6 +12,7 @@ export class ShopService {
   private http = inject(HttpClient);
   types: string[] = [];
   brands: string[] = [];
+  platforms: string[] = [];
 
   getProducts(shopParams: ShopParams) {
     let params = new HttpParams();
@@ -61,4 +62,13 @@ export class ShopService {
       error: error => console.log(error)
     })
   }
+
+  getPlatforms() {
+    if (this.platforms.length > 0) return;
+    return this.http.get<string[]>(this.baseUrl + 'products/platforms').subscribe({
+      next: response => this.platforms = response,
+      error: error => console.log(error)
+    })
+  }
+
 }

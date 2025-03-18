@@ -10,6 +10,9 @@ import {
 import {Product} from '../../../shared/models/product';
 import {TextInputComponent} from '../../../shared/components/text-input/text-input.component';
 import {MatButton} from '@angular/material/button';
+import {TextAreaComponent} from '../../../shared/components/text-area/text-area.component';
+import {ShopService} from '../../../core/services/shop.service';
+import {SelectInputComponent} from '../../../shared/components/select-input/select-input.component';
 
 @Component({
   selector: 'app-product-form',
@@ -19,19 +22,26 @@ import {MatButton} from '@angular/material/button';
     ReactiveFormsModule,
     TextInputComponent,
     MatButton,
-    MatDialogClose
+    MatDialogClose,
+    TextAreaComponent,
+    SelectInputComponent
   ],
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.scss'
 })
 export class ProductFormComponent implements OnInit {
+  shopService = inject(ShopService);
   productForm!: FormGroup;
   data = inject(MAT_DIALOG_DATA);
   private fb = inject(FormBuilder);
   private dialogRef = inject(MatDialogRef<ProductFormComponent>);
 
+
   ngOnInit() {
     this.initializeForm();
+    setTimeout(()=>{
+      this.loadBrandsAndTypesAndPlatforms();
+    })
   }
 
   initializeForm() {
@@ -54,4 +64,9 @@ export class ProductFormComponent implements OnInit {
     }
   }
 
+  loadBrandsAndTypesAndPlatforms() {
+    this.shopService.getTypes();
+    this.shopService.getBrands();
+    this.shopService.getPlatforms();
+  }
 }

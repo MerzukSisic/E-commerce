@@ -1,24 +1,19 @@
-<header class="border-b shadow-md p-3 w-full max-h-20 fixed top-0 z-50 bg-white">
+<header class="border-b shadow-md p-3 w-full max-h-20 fixed top-0 z-50 bg-gray-100 ">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 
   <div class="flex align-middle items-center justify-between w-full mx-auto">
-    <img routerLink="/" src="/images/logo.png" alt="app logo" class="max-h-16 ml-11 pl-2">
+    <img routerLink="/" src="/images/logo.png" alt="app logo" class="max-h-16 ml-11 pl-2 transform scale-150">
     <nav class="flex gap-8 my-2 uppercase text-2xl">
-      <a routerLink="/"
-         routerLinkActive="active"
-         [routerLinkActiveOptions]="{exact:true}"
-      >
-        Home
-      </a>
-      <a routerLink="/shop" routerLinkActive="active">Shop</a>
-      <a routerLink="/shop" [queryParams]="{ platform: 'PC' }" routerLinkActive="active">PC</a>
-      <a routerLink="/shop" [queryParams]="{ platform: 'Nintendo' }" routerLinkActive="active">Nintendo</a>
-      <a routerLink="/shop" [queryParams]="{ platform: 'PlayStation' }" routerLinkActive="active">PlayStation</a>
-      <a routerLink="/shop" [queryParams]="{ platform: 'Xbox' }" routerLinkActive="active">Xbox</a>
-      <a routerLink="/shop" [queryParams]="{ platform: 'Mobile' }" routerLinkActive="active">Mobile</a>
-      <a routerLink="/test-error" routerLinkActive="active">Test error</a>
-      <a routerLink="/about" routerLinkActive="active">About</a>
-      <a *appIsAdmin routerLink="/admin" routerLinkActive="active">Admin</a>
+      <span *ngIf="isHomePage" class="text-gray-600 font-semibold">Welcome to our gaming store!</span>
+      <a *ngIf="!isHomePage" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+      <a *ngIf="!isHomePage" routerLink="/shop" routerLinkActive="active">Shop</a>
+      <a *ngIf="!isHomePage" routerLink="/shop" [queryParams]="{ platform: 'PC' }" routerLinkActive="active">PC</a>
+      <a *ngIf="!isHomePage" routerLink="/shop" [queryParams]="{ platform: 'Nintendo' }" routerLinkActive="active">Nintendo</a>
+      <a *ngIf="!isHomePage" routerLink="/shop" [queryParams]="{ platform: 'PlayStation' }" routerLinkActive="active">PlayStation</a>
+      <a *ngIf="!isHomePage" routerLink="/shop" [queryParams]="{ platform: 'Xbox' }" routerLinkActive="active">Xbox</a>
+      <a *ngIf="!isHomePage" routerLink="/shop" [queryParams]="{ platform: 'Mobile' }" routerLinkActive="active">Mobile</a>
+      <a [hidden]="isHomePage"  *appIsAdmin routerLink="/test-error" routerLinkActive="active">Errors</a>
+      <a [hidden]="isHomePage"  *appIsAdmin routerLink="/admin" routerLinkActive="active">Admin</a>
     </nav>
     <div class="flex gap-3 align-middle justify-end mr-5">
       <a

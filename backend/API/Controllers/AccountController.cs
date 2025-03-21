@@ -67,11 +67,18 @@ public class AccountController(SignInManager<AppUser> signInManager, IEmailServi
     }
 
     [HttpGet("auth-status")]
-    public ActionResult GetAuthState()
+    public async Task<ActionResult> GetAuthState([FromServices] UserManager<AppUser> userManager)
     {
+        var userEmail = User.FindFirstValue(ClaimTypes.Email);
+        if (userEmail == null) return Ok(new { isAuthenticated = false });
+
+        var user = await userManager.FindByEmailAsync(userEmail);
+        if (user == null) return Ok(new { isAuthenticated = false });
+
         return Ok(new
         {
-            IsAuthenticated = User.Identity?.IsAuthenticated ?? false
+            isAuthenticated = true,
+            emailConfirmed = user.EmailConfirmed
         });
     }
 

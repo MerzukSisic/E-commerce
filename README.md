@@ -10,6 +10,10 @@ This is a modern e-commerce web application for buying and selling video games, 
 - **Order Management** – Admins can **refund purchases** if necessary.
 - **Payment Integration** – Secure payment processing via **Stripe**.
 - **Redis Integration** – Used for caching and storing active shopping cart data.
+- **AI Chat Support** – Integrated AI-powered chat for user assistance.
+- **Email Service** – Used for **email verification** and support notifications.
+- **Webhook Support** – External system integration via webhooks.
+- **Interactive Maps** – Integrated maps for location-based services.
 - **Filtering & Sorting** – Users can filter games by genre, platform, and price.
 - **Admin Panel** – Allows game management and order refunds.
 
